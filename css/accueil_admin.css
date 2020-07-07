@@ -1,0 +1,17 @@
+body {
+    background: url("../img/parchemingris.jpg");
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+header {
+    background-color: rgba(46, 50, 53, 0.3);
+    color: white;
+    margin: 5% 20%;
+}
+h2 {
+    text-align: center;
+}
+.div1 {
+    text-align: center;
+}

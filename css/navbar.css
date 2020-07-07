@@ -1,0 +1,28 @@
+#navbarSupportedContent {
+    background:rgba(255,255,255,.2);
+    box-shadow: 0 5px 15px rgba(0,0,0,.2);
+    margin: 0.2vw;
+    padding: 0.5vw;
+    font-size: 3vh;
+    width: auto;
+    height: 11vh;
+    line-height: 11vh;
+}
+.nav-link:hover {
+    background: #ffffff;
+    color: #000000 !important;
+}
+.nav-link {
+    color: white!important;
+    font-weight: bold;
+    /*width: auto;
+    height: 11vh;
+    line-height: 11vh;*/
+}
+.logojess {
+    width: auto;
+    height: 9vh;
+    line-height: 9vh;
+    margin-bottom:10px;
+}
+
