@@ -11,7 +11,7 @@
             <a class="navbar-brand" href="#"><img src="img/logojess01.jpg" class="logojess"/></a>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="..">HOME <span class="sr-only"></span></a>
+                <a class="nav-link" href="?p=home">HOME<span class="sr-only"></span></a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="?p=presentation" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

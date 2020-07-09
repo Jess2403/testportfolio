@@ -18,7 +18,7 @@ if(!isset($_SESSION['idmasession']) || $_SESSION['idmasession']!==session_id()){
 </head>
 <body>
 <?php
-    include "php/navbar.php";
+    include "php/admin/navbar_deconnect.php";
 ?>
 <h1>Accueil</h1>
 <h2>Bienvenue<?=$_SESSION['login']?></h2>

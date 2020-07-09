@@ -9,7 +9,7 @@
 </head>
 <body>
 <?php
-    include "php/navbar.php"
+    include "php/navbar_connect.php"
 ?>
 <div class="div1">
     <img src="img/fondlogo.png" class="logo02"/>

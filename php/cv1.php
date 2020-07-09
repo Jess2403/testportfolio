@@ -12,7 +12,7 @@
 </head>
 <body>
 <?php
-    include "php/navbar.php";
+    include "php/navbar_connect.php";
 ?>
 <main>
     <div class="titre1">

@@ -1,9 +1,4 @@
-<?php
-//vérification de l'existence de la session ou de la validité de la session
-if (!isset($_SESSION['iddemasession']) && $_SESSION['iddemasession'] !== session_id()) {
-    header('Location: ./');
-}
-?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -22,6 +17,9 @@ if (!isset($_SESSION['iddemasession']) && $_SESSION['iddemasession'] !== session
 <div class="div1">
     <img src="img/fondlogo.png" class="logo02"/>
     <h1 class="titre1">Liste de liens utiles.</h1>
+    <?php
+
+    ?>
         <p>Vous trouverez ci-dessous quelques liens qui m'ont servit pour confectionner mon site:</p>
     <h2>Pour mes animations:</h2>
     <div class="liste1"
@@ -56,6 +54,14 @@ if (!isset($_SESSION['iddemasession']) && $_SESSION['iddemasession'] !== session
                 <a href="https://www.cssdebutant.com/debuter-en-css-integrer-du-css-page-HTML.html">Mise en page</a>
         </ol>
     </div>
+    <h2>Espace - Formateur:</h2>
+    <div class="liste1">
+        <?php
+
+        if(isset($nom_site, $url, $description))
+            echo "<ol><li>$description<br></li><a href='$url'>$nom_site</a></ol>";
+        ?>
+
 <footer>
     <p class="liens" >
         <a href="?p=projet">Précédant</a>/

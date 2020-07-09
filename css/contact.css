@@ -1,11 +1,10 @@
-@import url("https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet");
+@import url("https://fonts.googleapis.com/css?family=Merriweather&display=swap");
 html {
     margin: 0;
     padding: 0;
-    background: url("../img/parchemingris.jpg");
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    background-size: cover;
+    /*background: url("../img/parchemingris.jpg");
+    background-repeat: no-repeat;*/
+
 }
 body {
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -13,6 +12,10 @@ body {
     color: #000;
     background-size: 160vw;
     margin: 5%;
+    background: url("../img/parchemingris.jpg");
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
 }
 /*.toggle {
     display: none;
@@ -28,7 +31,6 @@ body {
 /*@media screen and (max-width: 1450px) and (min-width: 900px)*/
 @media screen and (max-width: 990px) {
     body {
-        background-size:
         padding: 0;
         margin: 5%;
     }
@@ -53,7 +55,7 @@ body {
         text-align: center;
         color: #ffff;
         background: rgba(0,0,0,.5);
-    }
+    }*/
 }
 /*@media screen and (min-width: 320px) and (max-width: 899px)*/
 @media screen and (min-width: 320px) and (max-width: 600px) {
@@ -97,7 +99,7 @@ h1 {
     font-size: 8vw;
     text-shadow: 20px 20px 20px #825938;
     text-align: center;
-    margin-top: 250px auto auto auto;
+    margin: 250px auto auto auto;
     }
 fieldset {
     border: 5px solid #3235a1;

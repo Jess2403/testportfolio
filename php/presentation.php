@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -51,11 +52,15 @@
 </div>
 <h3>Et le plus important...! Ce pourquoi je fais cette formation.</h3>
 <img class="img" src="img/fondlogo.png"/>
-<!--<script type="text/javascript" src="javascript/swiper.min.js"></script>-->
-
+<h3>Espace - formateur</h3>
+<div class="swiper-container">
+    <?php
+    if (isset($fichier))
+        echo "<div class='swiper-wrapper'><div class='swiper-slide' style='background-image:url($fichier)'></div></div>"
+    ?>
 <footer>
     <p class="liens" >
-        <a href="admin">Précédant</a>/
+        <a href="?p=home ">Précédant</a>/
         <a href="?p=Tutos">Suivant</a></p><br>
     <br>
     <hr>

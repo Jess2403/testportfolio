@@ -2,31 +2,39 @@
 // protection de l'accès à cette page, si la session n'existe pas OU qu'elle n'est pas ou plus valide
 if(!isset($_SESSION['iddemasession'])||$_SESSION['iddemasession']!==session_id()) {
     // on efface définitivement la session et on est redirigé sur la page d'accueil publique
-    header("Location: ./");
+    header("Location: sedeconnecter.php");
     exit();
 }
 
-if (isset($_POST['nom_categorie'])) {
+if (isset($_POST['categorie_liens'])) {
+
     if (isset($_POST['nom_site'], $_POST['url'], $_POST['description'])) {
         // si erreur vaudra "" => empty
-        $thename = htmlspecialchars(strip_tags(trim($_POST['nom'])), ENT_QUOTES);
+        $thename = htmlspecialchars(strip_tags(trim($_POST['nom_site'])), ENT_QUOTES);
         // si erreur vaudra false => !$theurl => $theurl!=true => $theurl==false => $theurl===false
         $theurl = filter_var($_POST['url'], FILTER_VALIDATE_URL);
         // si erreur vaudra "" => empty
         $thetext = htmlspecialchars(
             strip_tags(
                 trim($_POST['description']), '<p><a><img><br><strong><b><i><em>'), ENT_QUOTES);
+        $categorieliens=(int)$_POST['categorie_liens'];
+        $admin = $_SESSION['idadminpres'];
 
         // si on a une erreur de type
-        if (empty($thename) || empty($thetext) || $theurl === false) {
-            $message = "Erreur de type de données, veuillez recommencer";
+        if (empty($thename) || empty($thetext) || $theurl === false || empty($categorieliens)) {
+            $_SESSION['$message2'] = "Erreur de type de données, veuillez recommencer";
+            header("Location:liens_admin.php");
         } else {
             // sql
-            $sql = "INSERT INTO liens (id_liens, nom, url, description, id_categorie, id_admin) VALUES ('$thetitle', '$theurl', '$thetext');";
+            $sql = "INSERT INTO liens (idliens, nom_site, url, description, categorie_liens_idcategorie_liens, adminpres_idadminpres) 
+                    VALUES (DEFAULT,'$thename', '$theurl', '$thetext',$categorieliens,$admin);";
             $insert = mysqli_query($db, $sql) or die(mysqli_error($db));
-            $message = "Merci pour l'insertion de votre lien";
+            $_SESSION['$message1']= "Merci pour l'insertion de votre lien";
+            header ("Location:liens_admin.php");
+
+            /*var_dump($sql);*/
         }
-    }
+    }        
 }
 else {
     echo "Vous n'avez pas choisi de catégorie pour pouvoir insérer le lien";
@@ -59,20 +67,33 @@ include "php/admin/navbar_deconnect.php";
 <main role="main" class="container">
     <h1 class="text-center md-4">Admin - Ajouter liens</h1>
     <p class="lead text-center">Ce formulaire vous permet d'ajouter un lien dans la liste</p>
-    <form id="formulaire" novalidate>
+    <form id="formulaire" method="post" action="php/javascript.php">
+        <p><strong>Veuillez choisir une catégorie ci-dessous pour rajouter les liens</strong></p>
+        <div class="form-check form-group offset-1">
+            <input class="form-check-input" type="radio" name="categorie_liens" id="animations" value="1" checked>
+            <label class="form-check-label" for="animations">Pour faire les animations</label>
+        </div>
+        <div class="form-check form-group offset-1">
+            <input class="form-check-input" type="radio" name="categorie_liens" id="recherches" value="2">
+            <label class="form-check-label" for="recherches">Pour faire des recherches</label>
+        </div>
+        <div class="form-check form-group offset-1">
+            <input class="form-check-input" type="radio" name="categorie_liens" id="espace-formateur" value="3">
+            <label class="form-check-label" for="espace-formateur">Pour l'espace-formateur</label>
+        </div>
         <div class="form-group row">
-            <label class="col-md-3" for="nomsite">Nom du site(*)</label>
-            <input type="text" class="form-control col-md-9" id="nomsite" placeholder="Entrez le nom du site">
+            <label class="col-md-3" for="nom_site"><strong>Nom du site(*)</strong></label>
+            <input type="text" class="form-control col-md-9" id="nom_site" name="nom_site" placeholder="Entrez le nom du site">
             <div class="invalid-feedback text-left offset-md-3">Vous devez entrez le nom du site</div>
         </div>
         <div class="form-group row">
-            <label class="col-md-3" for="urlsite">Adresse du site(*)</label>
-            <input type="url" class="form-control col-md-9" id="urlsite" placeholder="Entrez l'adresse du site(URL)" required>
+            <label class="col-md-3" for="url"><strong>Adresse du site(*)</strong></label>
+            <input type="url" class="form-control col-md-9" id="url" name="url" placeholder="Entrez l'adresse du site(URL)" required>
             <div class="invalid-feedback text-left offset-md-3">Vous devez renseigner l'URL du site</div>
         </div>
         <div class="form-group row">
-            <label class="col-md-3" for="descriptionsite">Description du site</label>
-            <textarea class="form-control col-md-9" id="descriptionsite" placeholder="Entrez une description du site"></textarea>
+            <label class="col-md-3" for="description"><strong>Description du site</strong></label>
+            <textarea class="form-control col-md-9" id="description" name="description" placeholder="Entrez une description du site"></textarea>
             <div class="invalid-feedback text-left offset-md-3">Vous devez entrer une description</div>
         </div>
         <div class="form-group row">
@@ -80,6 +101,8 @@ include "php/admin/navbar_deconnect.php";
         </div>
         <button type="submit" class="btn btn-primary btn-block col-md-4 offset-md-4">Envoyer les données</button>
     </form>
-
+    <?php
+    include "php/javascript.php"
+    ?>
 </body>
 </html>
