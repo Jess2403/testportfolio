@@ -22,22 +22,25 @@ if (isset($_POST['categorie_liens'])) {
 
         // si on a une erreur de type
         if (empty($thename) || empty($thetext) || $theurl === false || empty($categorieliens)) {
-            $_SESSION['$message2'] = "Erreur de type de données, veuillez recommencer";
-            header("Location:liens_admin.php");
+
+            header("Location:?p=liens_admin");
+            $message= "Erreur de type de données";
         } else {
             // sql
             $sql = "INSERT INTO liens (idliens, nom_site, url, description, categorie_liens_idcategorie_liens, adminpres_idadminpres) 
                     VALUES (DEFAULT,'$thename', '$theurl', '$thetext',$categorieliens,$admin);";
             $insert = mysqli_query($db, $sql) or die(mysqli_error($db));
-            $_SESSION['$message1']= "Merci pour l'insertion de votre lien";
-            header ("Location:liens_admin.php");
+            header ("Location: ?p=liens_admin&insert");
 
             /*var_dump($sql);*/
         }
-    }        
+    }
+    else {
+        $erreur = "Le remplissage des champs n'est pas correct.";
+    }
 }
 else {
-    echo "Vous n'avez pas choisi de catégorie pour pouvoir insérer le lien";
+    $erreur = "Vous n'avez pas choisi de catégorie pour pouvoir insérer le lien";
 }
 ?>
 <!doctype html>
@@ -67,18 +70,18 @@ include "php/admin/navbar_deconnect.php";
 <main role="main" class="container">
     <h1 class="text-center md-4">Admin - Ajouter liens</h1>
     <p class="lead text-center">Ce formulaire vous permet d'ajouter un lien dans la liste</p>
-    <form id="formulaire" method="post" action="php/javascript.php">
+    <form id="formulaire" method="post" action="">
         <p><strong>Veuillez choisir une catégorie ci-dessous pour rajouter les liens</strong></p>
         <div class="form-check form-group offset-1">
-            <input class="form-check-input" type="radio" name="categorie_liens" id="animations" value="1" checked>
+            <input class="form-check-input" type="radio" name="categorie_liens" id="animations" value="<?$categorieliens['animations']?>" checked>
             <label class="form-check-label" for="animations">Pour faire les animations</label>
         </div>
         <div class="form-check form-group offset-1">
-            <input class="form-check-input" type="radio" name="categorie_liens" id="recherches" value="2">
+            <input class="form-check-input" type="radio" name="categorie_liens" id="recherches" value="<?$categorieliens['recherches']?>">
             <label class="form-check-label" for="recherches">Pour faire des recherches</label>
         </div>
         <div class="form-check form-group offset-1">
-            <input class="form-check-input" type="radio" name="categorie_liens" id="espace-formateur" value="3">
+            <input class="form-check-input" type="radio" name="categorie_liens" id="espace-formateur" value="<?$categorieliens['espace_formateur']?>">
             <label class="form-check-label" for="espace-formateur">Pour l'espace-formateur</label>
         </div>
         <div class="form-group row">

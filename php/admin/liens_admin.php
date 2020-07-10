@@ -1,5 +1,4 @@
 <?php
-session_start();
 // protection de l'accès à cette page, si la session n'existe pas OU qu'elle n'est pas ou plus valide
 if(!isset($_SESSION['iddemasession'])||$_SESSION['iddemasession']!==session_id()) {
     // on efface définitivement la session et on est redirigé sur la page d'accueil publique
@@ -9,7 +8,7 @@ if(!isset($_SESSION['iddemasession'])||$_SESSION['iddemasession']!==session_id()
 
     $sql="SELECT c.idcategorie_liens, c.nom_cat_liens, l.idliens, l.nom_site, l.url, l.description  
         FROM categorie_liens 
-        INNER JOIN liens l ON c.categorie_liens_idcategorie_liens = l.id liens WHERE c.idcategorie_liens;";
+        INNER JOIN liens l ON c.categorie_liens_idcategorie_liens = l.idliens WHERE c.idcategorie_liens;";
     $recup_liens = mysqli_query($db,$sql) or die(mysqli_error($db));
 
     // on compte le nombre de lignes de résultat
@@ -45,25 +44,48 @@ include "php/admin/navbar_deconnect.php";
     <h1 class="titre1">Portfolio | Admin - Liens</h1>
     <pre>
     <?php
-    if (isset($message1)) {
-        echo
-        '<div class="alert alert-success alert-dismissible fade show offset-1 col-9" role="alert" id="messageok">
-            <h4 class="alert-heading">.$message1.</h4>
-            <p class="text-center">Votre message à bien été envoyer</p>
+    if (isset($_GET['message'])) {
+        switch ($_GET['message']) {
+            case "insert":
+        ?>
+        <div class="alert alert-success alert-dismissible fade show offset-1 col-9" role="alert" id="messageok">
+            <p class="text-center">Votre insertion a bien été faite</p>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true"></span>
             </button>
-        </div>';
-    }
-        if(isset($message2)) {
-            echo
-            '<div class="alert alert-danger alert-dismissible fade show offset-1 col-9" role="alert" id="messageok">
-            <h4 class="alert-heading">.$message2.</h4>
-            <p class="text-center">Votre message \n\'a pas été envoyer</p>
+        </div>
+        <?php
+            break;
+            case "delete":
+                ?>
+        <div class="alert alert-success alert-dismissible fade show offset-1 col-9" role="alert" id="messageok">
+            <p class="text-center">Votre suppression a bien été faite</p>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true"></span>
+            </button>
+        </div>
+        <?php
+            break;
+            case "update":
+                ?>
+        <div class="alert alert-success alert-dismissible fade show offset-1 col-9" role="alert" id="messageok">
+            <p class="text-center">Votre modification a bien été insérée</p>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true"></span>
+            </button>
+        </div>
+        <?php
+            break;
+            default:
+        ?>
+        <div class="alert alert-danger alert-dismissible fade show offset-1 col-9" role="alert" id="messageok">
+            <p class="text-center">Vous ne pouvez exécuter cette action</p>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="false"></span>
             </button>
-        </div>';
+        </div>
+        <?php
+        }
     }
     ?>
     </pre>
