@@ -44,7 +44,7 @@ else {
 }
 ?>
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -55,7 +55,7 @@ else {
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="css/accueil_admin.css">
-    <title>Accueil - Admin</title>
+    <title>Portfolio | Ajouter un lien</title>
     <style>
     </style>
 
@@ -65,7 +65,7 @@ else {
 include "php/admin/navbar_deconnect.php";
 ?>
 <header>
-    <h1 class="display-4 text-center mb-4">Portfolio | Ajouter des liens</h1>
+    <h1 class="display-4 text-center mb-4">Portfolio | Ajouter un lien</h1>
 </header>
 <main role="main" class="container">
     <h1 class="text-center md-4">Admin - Ajouter liens</h1>
@@ -73,15 +73,15 @@ include "php/admin/navbar_deconnect.php";
     <form id="formulaire" method="post" action="">
         <p><strong>Veuillez choisir une catégorie ci-dessous pour rajouter les liens</strong></p>
         <div class="form-check form-group offset-1">
-            <input class="form-check-input" type="radio" name="categorie_liens" id="animations" value="<?$categorieliens['animations']?>" checked>
+            <input class="form-check-input" type="radio" name="categorie_liens" id="animations" value="1" checked>
             <label class="form-check-label" for="animations">Pour faire les animations</label>
         </div>
         <div class="form-check form-group offset-1">
-            <input class="form-check-input" type="radio" name="categorie_liens" id="recherches" value="<?$categorieliens['recherches']?>">
+            <input class="form-check-input" type="radio" name="categorie_liens" id="recherches" value="2"">
             <label class="form-check-label" for="recherches">Pour faire des recherches</label>
         </div>
         <div class="form-check form-group offset-1">
-            <input class="form-check-input" type="radio" name="categorie_liens" id="espace-formateur" value="<?$categorieliens['espace_formateur']?>">
+            <input class="form-check-input" type="radio" name="categorie_liens" id="espace-formateur" value="3">
             <label class="form-check-label" for="espace-formateur">Pour l'espace-formateur</label>
         </div>
         <div class="form-group row">

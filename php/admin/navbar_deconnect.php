@@ -40,7 +40,7 @@
                     <a class="dropdown-item" href="?p=myadmin">Se connecter</a>
                     <div class="dropdown-divider"><hr></div>
                     <a class="dropdown-item" href="?p=ajoutliens">Ajouter un lien</a>
-                    <a class="dropdown-item" href="?p=liens">Lire les liens</a>
+                    <a class="dropdown-item" href="?p=liens_admin">Lire les liens</a>
                     <a class="dropdown-item" href="?p=updateliens">Modifier un lien</a>
                     <a class="dropdown-item" href="?p=deleteliens">Supprimer un lien</a>
                 </div>

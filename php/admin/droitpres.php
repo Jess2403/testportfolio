@@ -39,7 +39,7 @@ if(!isset($_SESSION['idmasession']) || $_SESSION['idmasession']!==session_id()){
     }
     ?>
     <li><a href="./">Retour à l'accueil</a></li>
-    <li><a href="sedeconnecter.php">Déconnexion</a></li>
+    <li><a href="../sedeconnecter.php">Déconnexion</a></li>
 
 </ul>
 

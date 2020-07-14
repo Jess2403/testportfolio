@@ -38,11 +38,11 @@ if (isset($_POST['login'], $_POST['pwd'])) {
             header('Location: ./');
         }
         else {
-            $message = "Login ou mot d epasse incorrect(s)";
+            $message = "Login et/ou mot de passe incorrect(s)";
         }
     }
     else {
-        $message = "login ou mot de passe au format(s) invalide(s)";
+        $message = "login et/ou mot de passe au format(s) invalide(s)";
     }
 }
 ?>

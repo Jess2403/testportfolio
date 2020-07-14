@@ -5,10 +5,9 @@ if(!isset($_SESSION['iddemasession'])||$_SESSION['iddemasession']!==session_id()
     header("Location: sedeonnecter.php");
     exit();
 }
-
     $sql="SELECT c.idcategorie_liens, c.nom_cat_liens, l.idliens, l.nom_site, l.url, l.description  
-        FROM categorie_liens 
-        INNER JOIN liens l ON c.categorie_liens_idcategorie_liens = l.idliens WHERE c.idcategorie_liens;";
+        FROM categorie_liens c
+        INNER JOIN liens l ON l.categorie_liens_idcategorie_liens = c.idcategorie_liens;";
     $recup_liens = mysqli_query($db,$sql) or die(mysqli_error($db));
 
     // on compte le nombre de lignes de résultat
@@ -16,11 +15,6 @@ if(!isset($_SESSION['iddemasession'])||$_SESSION['iddemasession']!==session_id()
 
     if(!$count){
         $message = "Pas encore de liens pour le moment";
-    }
-    else{
-        // utilisation de mysqli_fetch_all qui va formater tous les résultats dans un tableau indexé, le paramètre non obligatoire MYSQLI_ASSOC fait que chaque ligne de ce tableau sera un tableau associatif
-        $tous_les_liens = mysqli_fetch_all($recup_liens,MYSQLI_ASSOC);
-        // var_dump($tous_les_liens);
 }
 
 ?>
@@ -32,6 +26,8 @@ if(!isset($_SESSION['iddemasession'])||$_SESSION['iddemasession']!==session_id()
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Portfolio | Admin - Liens</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
     <link rel="stylesheet" href="css/liens.css">
 </head>
 <body>
@@ -81,7 +77,7 @@ include "php/admin/navbar_deconnect.php";
         <div class="alert alert-danger alert-dismissible fade show offset-1 col-9" role="alert" id="messageok">
             <p class="text-center">Vous ne pouvez exécuter cette action</p>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="false"></span>
+                <span aria-hidden="true"></span>
             </button>
         </div>
         <?php
@@ -96,40 +92,57 @@ include "php/admin/navbar_deconnect.php";
         <li>Pour faire mes boutons de navigation dans ma page "ACCUEIL".<br>
             <a href="https://www.youtube.com/watch?v=ex7jGbyFgpA">Bouton néon</a>
         </li>
+        <a href="?p=ajoutliens"<i class="fa fa-plus-circle" aria-hidden="true"></i>Ajouter un lien</a>
+        <a href="?p=updateliens"<i class="fa fa-pencil-square" aria-hidden="true"></i>Modifier un lien</a>
+        <a href="?p=deleteliens"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un liens</a>
+
         <li>Pour faire ma sphère 3d qui est sur ma page "ACCUEIL".<br>
             <a href="https://www.youtube.com/watch?v=icgbxlqf9Kc">Sphère animation 3D</a>
         </li>
+        <a href="?p=ajoutliens"<i class="fa fa-plus-circle" aria-hidden="true"></i>Ajouter un lien</a>
+        <a href="?p=updateliens"<i class="fa fa-pencil-square" aria-hidden="true"></i>Modifier un lien</a>
+        <a href="?p=deleteliens"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un liens</a>
+
         <li>Pour faire mon animation texte dans ma page "ACCUEIL"<br>
             <a href="https://www.youtube.com/watch?v=ajhJnfS_FK4">Effet animation texte</a>
         </li>
+        <a href="?p=ajoutliens"<i class="fa fa-plus-circle" aria-hidden="true"></i>Ajouter un lien</a>
+        <a href="?p=updateliens"<i class="fa fa-pencil-square" aria-hidden="true"></i>Modifier un lien</a>
+        <a href="?p=deleteliens"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un liens</a>
+
         <li>Pour faire le swipe responsive que vous trouverez dans ma page "PRESENTATION".<br>
             <a href="https://www.youtube.com/watch?v=kw1wnvWjgCw">Swipe 3d responsive:</a>
         </li>
+        <a href="?p=ajoutliens"<i class="fa fa-plus-circle" aria-hidden="true"></i>Ajouter un lien</a>
+        <a href="?p=updateliens"<i class="fa fa-pencil-square" aria-hidden="true"></i>Modifier un lien</a>
+        <a href="?p=deleteliens"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un liens</a>
+
         <?php
 
-        if (isset($_GET['idcategorie_liens']) && ctype_digit($_GET['idcategorie_liens'])) {
-        $animations = $_GET['idcategorie_liens'];
-        $sql3 = "SELECT idcatégorie_liens FROM categorie_liens WHERE idcategorie_liens=3;";
-        $recup_cat1 = mysqli_query($db, $sql3) or die(mysqli_error($db));
+        $sql1 = "SELECT * FROM liens JOIN categorie_liens ON idcategorie_liens = categorie_liens_idcategorie_liens 
+                WHERE nom_cat_liens = 'animations';";
+        $recup_cat1 = mysqli_query($db, $sql1) or die(mysqli_error($db));
 
-        }
-        else {
-            echo "Vous n'avez pas récupérer vos liens dans cete catégorie";
-        }
-            if(isset($nom_site, $url, $description)) {
-                foreach ($tous_les_liens as $item) {
+                foreach ($recup_cat1 as $item1) {
                     ?>
                     <li>
                         <?php
                         // comme on a encodé dans la bdd avec htmlentities et ENT_QUOTES, on utilise pour l'html autorisé (par le strip_tags) html_entity_decode avec le même flag ENT_QUOTES
-                        echo html_entity_decode($item['description'], ENT_QUOTES);
+                        echo html_entity_decode($item1['description'], ENT_QUOTES);
                         ?>
-                        <a href="<?= $item['url'] ?>" target="_blank"><?= $item['nom_site'] ?></a>
+                        <a href="<?= $item1['url'] ?>" target="_blank"><?= $item1['nom_site'] ?></a>
+                        <a class="btn btn-danger" href="?admin=delete_liens&id=<?=$item1['idliens']?>&ok" role="button">Supprime définitivement !</a>
+                        <a class="btn btn-secondary" href="?admin=liensadmin" role="button">Ne pas supprimer</a>
                     </li>
+                    <a href="?p=ajoutliens"<i class="fa fa-plus-circle" aria-hidden="true"></i>Ajouter un lien</a>
+                    <a href="?p=updateliens"<i class="fa fa-pencil-square" aria-hidden="true"></i>Modifier un lien</a>
+                    <a href="?p=deleteliens"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un liens</a>
+
                     <?php
-                }
+
             }
         ?>
+
     </ol>
 </div>
 <h2>Pour mes recherches:</h2>
@@ -137,38 +150,55 @@ include "php/admin/navbar_deconnect.php";
     <ol>
         <li>Pour faire mes fonds d'écran en linear-gradient. ( Mes couleurs de fonds de pages).</li>
         <a href="https://developer.mozilla.org/fr/docs/Web/CSS/linear-gradient">Linear-gradient</a>
+        <a href="?p=ajoutliens"<i class="fa fa-plus-circle" aria-hidden="true"></i>Ajouter un lien</a>
+        <a href="?p=updateliens"<i class="fa fa-pencil-square" aria-hidden="true"></i>Modifier un lien</a>
+        <a href="?p=deleteliens"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un liens</a>
+
         <li>Pour faire ma barre de navigation responsive sur toutes mes pages sauf "ACCUEIL".</li>
         <a href="https://www.youtube.com/watch?v=lYw-FE60Dws">Navbar responsive</a>
+        <a href="?p=ajoutliens"<i class="fa fa-plus-circle" aria-hidden="true"></i>Ajouter un lien</a>
+        <a href="?p=updateliens"<i class="fa fa-pencil-square" aria-hidden="true"></i>Modifier un lien</a>
+        <a href="?p=deleteliens"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un liens</a>
+
         <li>Pour divers soucis en css</li>
         <a href="https://developer.mozilla.org/fr/docs/Web/CSS/font-style">Ici pour les font-style(gras, italic,...</a>
+        <a href="?p=ajoutliens"<i class="fa fa-plus-circle" aria-hidden="true"></i>Ajouter un lien</a>
+        <a href="?p=updateliens"<i class="fa fa-pencil-square" aria-hidden="true"></i>Modifier un lien</a>
+        <a href="?p=deleteliens"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un liens</a>
+
         <li>
             <a href="https://www.formget.com/css-lists/">Pour faire mes listes de liens.</a>
         </li>
+        <a href="?p=ajoutliens"<i class="fa fa-plus-circle" aria-hidden="true"></i>Ajouter un lien</a>
+        <a href="?p=updateliens"<i class="fa fa-pencil-square" aria-hidden="true"></i>Modifier un lien</a>
+        <a href="?p=deleteliens"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un liens</a>
+
         <li>Pour m'aider dans ma mise en page de ma page cv pour l'intégration d'un paragraphe dans mon encadré faisant partie de mon titre.</li>
         <a href="https://www.cssdebutant.com/debuter-en-css-integrer-du-css-page-HTML.html">Mise en page</a>
+        <a href="?p=ajoutliens"<i class="fa fa-plus-circle" aria-hidden="true"></i>Ajouter un lien</a>
+        <a href="?p=updateliens"<i class="fa fa-pencil-square" aria-hidden="true"></i>Modifier un lien</a>
+        <a href="?p=deleteliens"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un liens</a>
+
         <?php
 
-        if (isset($_GET['idcategorie_liens']) && ctype_digit($_GET['idcategorie_liens'])) {
-            $animations = $_GET['idcategorie_liens'];
-            $sql1 = "SELECT idcatégorie_liens FROM categorie_liens WHERE idcategorie_liens=2;";
-            $recup_cat2 = mysqli_query($db, $sql2) or die(mysqli_error($db));
+        $sql2 = "SELECT * FROM liens JOIN categorie_liens ON idcategorie_liens = categorie_liens_idcategorie_liens WHERE nom_cat_liens = 'recherches';";
+        $recup_cat2 = mysqli_query($db, $sql2) or die(mysqli_error($db));
 
-        }
-        else {
-            echo "Vous n'avez pas récupérer vos liens dans cete catégorie";
-        }
-        if(isset($nom_site, $url, $description)) {
-            foreach ($tous_les_liens as $item) {
-                ?>
-                <li>
-                    <?php
-                    // comme on a encodé dans la bdd avec htmlentities et ENT_QUOTES, on utilise pour l'html autorisé (par le strip_tags) html_entity_decode avec le même flag ENT_QUOTES
-                    echo html_entity_decode($item['description'], ENT_QUOTES);
-                    ?>
-                </li>
-                    <a href="<?= $item['url'] ?>" target="_blank"><?= $item['nom_site'] ?></a>
+        foreach ($recup_cat2 as $item2) {
+            ?>
+            <li>
                 <?php
-            }
+                // comme on a encodé dans la bdd avec htmlentities et ENT_QUOTES, on utilise pour l'html autorisé (par le strip_tags) html_entity_decode avec le même flag ENT_QUOTES
+                echo html_entity_decode($item2['description'], ENT_QUOTES);
+                ?>
+                <a href="<?= $item2['url'] ?>" target="_blank"><?= $item2['nom_site'] ?></a>
+            </li>
+            <a href="?p=ajoutliens"<i class="fa fa-plus-circle" aria-hidden="true"></i>Ajouter un lien</a>
+            <a href="?p=updateliens"<i class="fa fa-pencil-square" aria-hidden="true"></i>Modifier un lien</a>
+            <a href="?p=deleteliens"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un liens</a>
+
+            <?php
+
         }
         ?>
     </ol>
@@ -178,18 +208,11 @@ include "php/admin/navbar_deconnect.php";
     <ol>
         <?php
 
-        if (isset($_GET['idcategorie_liens']) && ctype_digit($_GET['idcategorie_liens'])) {
-            $animations = $_GET['idcategorie_liens'];
-            $sql1 = "SELECT idcatégorie_liens FROM categorie_liens WHERE idcategorie_liens=1;";
-            $recup_cat1 = mysqli_query($db, $sql1) or die(mysqli_error($db));
+        $sql2 = "SELECT * FROM liens JOIN categorie_liens ON idcategorie_liens = categorie_liens_idcategorie_liens WHERE nom_cat_liens = 'espace_formateur';";
+        $recup_cat2 = mysqli_query($db, $sql2) or die(mysqli_error($db));
 
-        }
-        else {
-            echo "Vous n'avez pas récupérer vos liens dans cete catégorie";
-        }
-        if(isset($nom_site, $url, $description)) {
-            foreach ($tous_les_liens as $item) {
-                ?>
+        foreach ($recup_cat2 as $item2) {
+        ?>
                 <li>
                     <?php
                     // comme on a encodé dans la bdd avec htmlentities et ENT_QUOTES, on utilise pour l'html autorisé (par le strip_tags) html_entity_decode avec le même flag ENT_QUOTES
@@ -197,12 +220,14 @@ include "php/admin/navbar_deconnect.php";
                     ?>
                     <a href="<?= $item['url'] ?>" target="_blank"><?= $item['nom_site'] ?></a>
                 </li>
-                <?php
+            <a href="?p=ajoutliens"<i class="fa fa-plus-circle" aria-hidden="true"></i>Ajouter un lien</a>
+            <a href="?p=updateliens"<i class="fa fa-pencil-square" aria-hidden="true"></i>Modifier un lien</a>
+            <a href="?p=deleteliens"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un liens</a>
+
+            <?php
             }
-        }
         ?>
     </ol>
-
     <footer>
         <p class="liens" >
             <a href="?p=projet">Précédant</a>/
