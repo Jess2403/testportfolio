@@ -36,8 +36,8 @@ if(!isset($_SESSION['iddemasession'])||$_SESSION['iddemasession']!==session_id()
             // sql - devient un update
             $sql = "UPDATE liens SET idliens = DEFAULT, nom_site ='$thename', url = '$theurl', description ='$thetext' , 
                     categorie_liens_idcategorie_liens = $categorieliens, adminpres_idadminpres = $admin);";
-            $update = mysqli_query($db, $sql) or die(mysqli_error($db));
-            header("Location: ?p=updateliens");
+            $insert = mysqli_query($db, $sql) or die(mysqli_error($db));
+            header("Location: ?p=updateliens&message=update");
 
         }
     }
@@ -132,8 +132,8 @@ include "navbar_deconnect.php";
         <div class="form-group row">
             <p class="form-text text-center col-md-12">(*) Champs obligatoire</p>
         </div>
-        <input type="hidden" name="idliens" value="<?=$liens['idliens']?>">
-        <button type="submit" class="btn btn-primary btn-block col-md-4 offset-md-4">Modifier les données</button>
+        <input type="hidden" name="idliens" value="<?=$idliens?>">
+        <a class="btn btn-primaty" href="?p=updateliens&idliens=<?=$idliens?>&ok" role="button">Modifier les données</a>
     </form>
     <?php
     include "php/javascript.php";

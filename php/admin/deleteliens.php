@@ -8,9 +8,9 @@ if (!isset($_SESSION['iddemasession']) || $_SESSION['iddemasession'] !== session
 
 
 // on vérifie l'existence de la variable get id et que son contenu de type string ne contient que des numériques
-if(isset($_GET['id'])&&ctype_digit($_GET['id'])){
+if(isset($_GET['idliens'])&&ctype_digit($_GET['idliens'])){
     // conversion en entier
-    $id = (int) $_GET['id'];
+    $idliens = (int) $_GET['idliens'];
 
     // on confirme la suppression en rajoutant la variable get ok
     if(isset($_GET['ok'])){
@@ -30,11 +30,11 @@ if(isset($_GET['id'])&&ctype_digit($_GET['id'])){
         $liens = mysqli_fetch_assoc($recup);
         // mysqli_num_rows($recup) vaut 0 donc false
     }else{
-        $erreur = "Cet article n'existe déjà plus!";
+        $erreur = "Cet article n'existe déjà plus ou n'a jamais existé";
     }
 // l'id n'existe pas ou n'est pas valide
 }else{
-    $erreur ="Arrête tes magouilles";
+    $erreur ="Pas d'id répertorié!";
 }
 
 ?>
@@ -53,11 +53,10 @@ if(isset($_GET['id'])&&ctype_digit($_GET['id'])){
 </head>
 <body>
 <?php
-include "menu_connect.php";
+include "navbar_deconnect.php";
 ?>
 <header class="jumbotron">
-    <h1 class="display-4 text-center mb-4">Portfolio | Suppression du lien - <?php echo (isset($erreur))? $erreur: $liens['thetitle']  ?></h1>
-    <p>Bienvenue <?=$_SESSION['therealname']?></p>
+    <h1 class="display-4 text-center mb-4">Portfolio | Suppression du lien - <?php echo (isset($erreur))? $erreur: $liens['nom_site']  ?></h1>
 </header>
 
 <main class="container">
@@ -65,11 +64,11 @@ include "menu_connect.php";
     if(!isset($erreur)){
         ?>
         <h3>Voulez vous vraiment supprimer :</h3><hr>
-        <h4><?=$liens['thetitle']?></h4>
-        <h5><?=$liens['theurl']?></h5>
+        <h4><?=$liens['nom_site']?></h4>
+        <h5><?=$liens['url']?></h5>
         <hr>
-        <a class="btn btn-danger" href="?admin=delete_liens&id=<?=$id?>&ok" role="button">Supprime définitivement !</a>
-        <a class="btn btn-secondary" href="?admin=liensadmin" role="button">Ne pas supprimer</a>
+        <a class="btn btn-danger" href="?p=deleteliens&idliens=<?=$idliens?>&ok" role="button">Supprime définitivement !</a>
+        <a class="btn btn-secondary" href="?p=liensadmin" role="button">Ne pas supprimer</a>
         <?php
     }else{
         ?>
@@ -81,7 +80,7 @@ include "menu_connect.php";
 
 <?php
 // chemin depuis index.php (CF frontal)
-include "./pages/javascript.php";
+include "php/javascript.php";
 
 ?>
 
