@@ -30,11 +30,11 @@
             <li>Pour faire ma sphère 3d qui est sur ma page "ACCUEIL".<br>
                 <a href="https://www.youtube.com/watch?v=icgbxlqf9Kc">Sphère animation 3D</a>
             </li>
-            <li>Pour faire mon animation texte dans ma page "ACCUEIL"<br>
+            <li>Pour faire mon animation texte dans ma page "ACCUEIL".<br>
                 <a href="https://www.youtube.com/watch?v=ajhJnfS_FK4">Effet animation texte</a>
             </li>
             <li>Pour faire le swipe responsive que vous trouverez dans ma page "PRESENTATION".<br>
-                <a href="https://www.youtube.com/watch?v=kw1wnvWjgCw">Swipe 3d responsive:</a>
+                <a href="https://www.youtube.com/watch?v=kw1wnvWjgCw">Swipe 3d responsive</a>
             </li>
         </ol>
     </div>
@@ -45,8 +45,8 @@
                 <a href="https://developer.mozilla.org/fr/docs/Web/CSS/linear-gradient">Linear-gradient</a>
             <li>Pour faire ma barre de navigation responsive sur toutes mes pages sauf "ACCUEIL".</li>
                 <a href="https://www.youtube.com/watch?v=lYw-FE60Dws">Navbar responsive</a>
-            <li>Pour divers soucis en css</li>
-                <a href="https://developer.mozilla.org/fr/docs/Web/CSS/font-style">Ici pour les font-style(gras, italic,...</a>
+            <li>Pour divers soucis en css(design du site).</li>
+                <a href="https://developer.mozilla.org/fr/docs/Web/CSS/font-style">Ici pour les font-style(gras, italic,...)</a>
             <li>
                 <a href="https://www.formget.com/css-lists/">Pour faire mes listes de liens.</a>
             </li>

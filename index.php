@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once "config.php";
-//connexion à la db mysqli_28
+//connexion à la db
 $db = mysqli_connect(DB_HOST, DB_LOGIN, DB_PWD, DB_NAME, DB_PORT);
 mysqli_set_charset($db, "utf8");
 
@@ -13,6 +13,9 @@ mysqli_set_charset($db, "utf8");
             case "navbar_connect":
                 include "php/navbar_connect.php";
                 break;
+            //case "connectligne":
+                //include "php/connectligne.php";
+                //break;
             case "presentation":
                 include "php/presentation.php";
                 break;
@@ -36,6 +39,9 @@ mysqli_set_charset($db, "utf8");
                 break;
             case "myadmin":
                 include "php/seconnecter.php";
+                break;
+            case "liste_contact":
+                include "php/admin/liste_contact_admin.php";
                 break;
             case "accueil_admin":
                 include "php/admin/accueil_admin.php";
@@ -66,6 +72,9 @@ mysqli_set_charset($db, "utf8");
                 break;
             case "liens_admin" :
                 include"php/admin/liens_admin.php";
+                break;
+            case "presadmin":
+                include "php/admin/pres_admin.php";
                 break;
             case "updateliens":
                 include "php/admin/updateliens.php";

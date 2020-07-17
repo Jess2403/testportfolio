@@ -49,7 +49,7 @@
                 <a href="?p=cv1" class="nav-link">CV<span class="sr-only"></span></a>
             </li>
             <li class="nav-item active">
-                <a href="?p=contact" class="nav-link">CONTACT<span class="sr-only"></span></a>
+                <a href="?p=liste_contact" class="nav-link">CONTACT<span class="sr-only"></span></a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">

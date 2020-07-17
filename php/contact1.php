@@ -10,7 +10,6 @@ if(isset($_POST['nom'])){
     $nom = strip_tags(trim($_POST['nom']));
     $prenom = strip_tags(trim($_POST['prenom']));
     $email = strip_tags(trim($_POST['email']));
-    $email_confirmation = strip_tags(trim($_POST['email_confirmation']));
     $message = strip_tags(trim($_POST['message']));
 
 
@@ -32,7 +31,7 @@ if(isset($_POST['nom'])){
 
         <body class="body">
         <?php
-            include "php/navbar.php"
+            include "php/navbar_connect.php"
         ?>
 
         <h1>Votre message a bien été envoyé!</h1>
@@ -46,14 +45,17 @@ if(isset($_POST['nom'])){
 
 ?>
 <?php
-$req = $bdd->prepare('INSERT INTO portfolioweb2020(nom, prenom, email, email_confirm, message) VALUES(:nom, :prenom, :email,
-:email_confirm, :message)');
-$req->execute(array(
-'nom' => $nom,
-'prenom' => $prenom,
-'email' => $email,
-'email_confirm' => $email,
-'message' => $message
-));
-echo 'Votre demande a bien été transférée';
+//$req = $db->prepare('INSERT INTO liste_contact (nom, prenom, email, message) VALUES(:nom, :prenom, :email, :message)');
+//$req->execute(array(
+//'nom' => $nom,
+//'prenom' => $prenom,
+//'email' => $email,
+//'message' => $message
+//));
+//echo 'Votre demande a bien été transférée.';
+$sql1 = "INSERT INTO liste_contact (idliste_contact, nom, prenom, email, message) 
+                    VALUES (DEFAULT,'$nom', '$prenom', '$email',$message);";
+$insert = mysqli_query($db, $sql1) or die(mysqli_error($db));
+header ("Location: ?p=liste_contact");
+$message1= "Votre mail a bien été envoyé";
 ?>

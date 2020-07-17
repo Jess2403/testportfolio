@@ -14,15 +14,15 @@ if(isset($_GET['idliens'])&&ctype_digit($_GET['idliens'])){
 
     // on confirme la suppression en rajoutant la variable get ok
     if(isset($_GET['ok'])){
-        $sql = "DELETE FROM liens WHERE idliens=$id";
+        $sql = "DELETE FROM liens WHERE idliens=$idliens";
         // suppression
         mysqli_query($db,$sql)or die(mysqli_error($db));
         // redirection - ajout d'une variable GET['message'] pour la confirmation,ici de la suppression(&message=delete
-        header("Location: ?admin=liensadmin&message=delete");
+        header("Location: ?p=liens_admin&message=delete");
     }
 
     // préparation de la requête
-    $sql = "SELECT thetitle, theurl FROM liens WHERE idliens=$id";
+    $sql = "SELECT nom_site, url FROM liens WHERE idliens=$idliens";
     // exécution de la requête
     $recup = mysqli_query($db,$sql) or die(mysqli_error($db));
     // si on trouve une ligne de résultat 1 vaut true

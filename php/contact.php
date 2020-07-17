@@ -42,13 +42,6 @@
                         <input type="text" id="email" name="email" required>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-25">
-                        <label for="cemail">Confirmation de l'email:</label>
-                    </div>
-                    <div class="col-75">
-                        <input type="text" id="cemail" name="email_confirmation" required>
-                    </div>
                 </div>
                 <div class="row">
                     <div class="col-25">

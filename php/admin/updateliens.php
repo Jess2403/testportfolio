@@ -11,11 +11,13 @@ if(!isset($_SESSION['iddemasession'])||$_SESSION['iddemasession']!==session_id()
  * COPIE CONFORME DE L'INSERT DE LA PAGE liens_admin_ajout.php
  *
  * si le formulaire est envoyé,on ajoute l'existence de idliens
- */if (isset($_POST['categorie_liens'])) {
+ */
+if (isset($_POST['categorie_liens'])) {
 
-    if (isset($_POST['idliens'], $_POST['nom_site'], $_POST['url'], $_POST['description'])) {
+
+    if (isset($_GET['idliens'], $_POST['nom_site'], $_POST['url'], $_POST['description'])) {
         //on traite idliens en le transformant en entier si faux 0 => empty
-        $idliens = (int)$_POST['idliens'];
+        $idliens = (int)$_GET['idliens'];
         // si erreur vaudra "" => empty
         $thename = htmlspecialchars(strip_tags(trim($_POST['nom_site'])), ENT_QUOTES);
         // si erreur vaudra false => !$theurl => $theurl!=true => $theurl==false => $theurl===false
@@ -30,14 +32,14 @@ if(!isset($_SESSION['iddemasession'])||$_SESSION['iddemasession']!==session_id()
         // pa rapport  à la variable GET,protège des attaques par modification du code source, mais pas les attaques via robots
         //ou des requêtes externes au site(rare si on est connecté, mais ne pas oublié que vos alliés (les membres de l'équipe)
         //peuvent devenir vos ennemis!
-        if (empty($thename) || empty($thetext) || $theurl === false || empty($idliens) || $idliens = $_GET['idliens']) {
+        if (empty($thename) || empty($thetext) || $theurl === false || empty($idliens)) {
             $message = "Erreur de type de données, veuillez recommencer";
         } else {
             // sql - devient un update
-            $sql = "UPDATE liens SET idliens = DEFAULT, nom_site ='$thename', url = '$theurl', description ='$thetext' , 
-                    categorie_liens_idcategorie_liens = $categorieliens, adminpres_idadminpres = $admin);";
+            $sql = "UPDATE liens SET nom_site ='$thename', url = '$theurl', description ='$thetext', categorie_liens_idcategorie_liens = $categorieliens, adminpres_idadminpres = $admin  WHERE idliens = $idliens;";
+           
             $insert = mysqli_query($db, $sql) or die(mysqli_error($db));
-            header("Location: ?p=updateliens&message=update");
+            header("Location: ?p=liens_admin&message=update");
 
         }
     }
@@ -100,7 +102,7 @@ include "navbar_deconnect.php";
     }
    ?>
 
-    <form id="formulaire" method="post" action="">
+    <form id="formulaire" method="post" action="?p=updateliens&idliens=<?=$idliens?>&ok">
         <p><strong>Veuillez choisir une catégorie ci-dessous pour rajouter les liens</strong></p>
         <div class="form-check form-group offset-1">
             <input class="form-check-input" type="radio" name="categorie_liens" id="animations" value="1" checked>
@@ -133,7 +135,7 @@ include "navbar_deconnect.php";
             <p class="form-text text-center col-md-12">(*) Champs obligatoire</p>
         </div>
         <input type="hidden" name="idliens" value="<?=$idliens?>">
-        <a class="btn btn-primaty" href="?p=updateliens&idliens=<?=$idliens?>&ok" role="button">Modifier les données</a>
+        <button type="submit" class="btn btn-primary">Modifier les données</button>
     </form>
     <?php
     include "php/javascript.php";

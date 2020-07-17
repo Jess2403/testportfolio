@@ -89,34 +89,6 @@ include "php/admin/navbar_deconnect.php";
     <h2>Pour mes animations:</h2>
     <div class="liste1"
     <ol>
-        <li>Pour faire mes boutons de navigation dans ma page "ACCUEIL".<br>
-            <a href="https://www.youtube.com/watch?v=ex7jGbyFgpA">Bouton néon</a>
-        </li>
-        <a href="?p=ajoutliens"<i class="fa fa-plus-circle" aria-hidden="true"></i>Ajouter un lien</a><br>
-        <a href="?p=updateliens&idliens"<img src="./img/update1.jpg" alt="modifier ce lien"/>Modifier un lien</a><br>
-        <a href="?p=deleteliens&idliens"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un liens</a>
-
-        <li>Pour faire ma sphère 3d qui est sur ma page "ACCUEIL".<br>
-            <a href="https://www.youtube.com/watch?v=icgbxlqf9Kc">Sphère animation 3D</a>
-        </li>
-        <a href="?p=ajoutliens"<i class="fa fa-plus-circle" aria-hidden="true"></i>Ajouter un lien</a><br>
-        <a href="?p=updateliens"<i class="fa fa-pencil" aria-hidden="true"></i>Modifier un lien</a><br>
-        <a href="?p=deleteliens"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un liens</a>
-
-        <li>Pour faire mon animation texte dans ma page "ACCUEIL"<br>
-            <a href="https://www.youtube.com/watch?v=ajhJnfS_FK4">Effet animation texte</a>
-        </li>
-        <a href="?p=ajoutliens"<i class="fa fa-plus-circle" aria-hidden="true"></i>Ajouter un lien</a><br>
-        <a href="?p=updateliens"<i class="fa fa-pencil" aria-hidden="true"></i>Modifier un lien</a><br>
-        <a href="?p=deleteliens"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un liens</a>
-
-        <li>Pour faire le swipe responsive que vous trouverez dans ma page "PRESENTATION".<br>
-            <a href="https://www.youtube.com/watch?v=kw1wnvWjgCw">Swipe 3d responsive:</a>
-        </li>
-        <a href="?p=ajoutliens"<i class="fa fa-plus-circle" aria-hidden="true"></i>Ajouter un lien</a><br>
-        <a href="?p=updateliens"<i class="fa fa-pencil" aria-hidden="true"></i>Modifier un lien</a><br>
-        <a href="?p=deleteliens"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un liens</a>
-
         <?php
 
         $sql1 = "SELECT * FROM liens JOIN categorie_liens ON idcategorie_liens = categorie_liens_idcategorie_liens 
@@ -128,59 +100,28 @@ include "php/admin/navbar_deconnect.php";
                     <li>
                         <?php
                         // comme on a encodé dans la bdd avec htmlentities et ENT_QUOTES, on utilise pour l'html autorisé (par le strip_tags) html_entity_decode avec le même flag ENT_QUOTES
-                        echo html_entity_decode($item1['description'], ENT_QUOTES);
+                        echo html_entity_decode($item1['description'], ENT_QUOTES)."<br>";
                         ?>
                         <a href="<?= $item1['url'] ?>" target="_blank"><?= $item1['nom_site'] ?></a><br>
                     </li>
                     <a href="?p=ajoutliens"<i class="fa fa-plus-circle" aria-hidden="true"></i>Ajouter un lien</a><br>
-                    <a href="?p=updateliens"<i class="fa fa-pencil" aria-hidden="true"></i>Modifier un lien</a><br>
-                    <a href="?p=deleteliens"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un liens</a><br>
-                    <a class="btn btn-danger" href="?admin=delete_liens&id=<?=$item1['idliens']?>&ok" role="button">Supprime définitivement !</a>
-                    <a class="btn btn-secondary" href="?admin=liensadmin" role="button">Ne pas supprimer</a>
+                    <a href="?p=updateliens&idliens=<?=$item1['idliens']?>"<i class="fa fa-pencil" aria-hidden="true"></i>Modifier un lien</a><br>
+                    <a href="?p=deleteliens&idliens=<?=$item1['idliens']?>"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un liens</a><br>
+                    <a class="btn btn-danger" href="?p=deleteliens&idliens=<?=$item1['idliens']?>&ok" role="button">Supprime définitivement !</a>
+                    <a class="btn btn-secondary" href="?p=liens_admin" role="button">Ne pas supprimer</a>
                     <?php
 
             }
         ?>
-
     </ol>
 </div>
 <h2>Pour mes recherches:</h2>
 <div class="liste1">
     <ol>
-        <li>Pour faire mes fonds d'écran en linear-gradient. ( Mes couleurs de fonds de pages).</li>
-        <a href="https://developer.mozilla.org/fr/docs/Web/CSS/linear-gradient">Linear-gradient</a><br>
-        <a href="?p=ajoutliens"<i class="fa fa-plus-circle" aria-hidden="true"></i>Ajouter un lien</a><br>
-        <a href="?p=updateliens"<i class="fa fa-pencil" aria-hidden="true"></i>Modifier un lien</a><br>
-        <a href="?p=deleteliens"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un liens</a>
-
-        <li>Pour faire ma barre de navigation responsive sur toutes mes pages sauf "ACCUEIL".</li>
-        <a href="https://www.youtube.com/watch?v=lYw-FE60Dws">Navbar responsive</a><br>
-        <a href="?p=ajoutliens"<i class="fa fa-plus-circle" aria-hidden="true"></i>Ajouter un lien</a><br>
-        <a href="?p=updateliens"<i class="fa fa-pencil" aria-hidden="true"></i>Modifier un lien</a><br>
-        <a href="?p=deleteliens"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un liens</a>
-
-        <li>Pour divers soucis en css</li>
-        <a href="https://developer.mozilla.org/fr/docs/Web/CSS/font-style">Ici pour les font-style(gras, italic,...</a><br>
-        <a href="?p=ajoutliens"<i class="fa fa-plus-circle" aria-hidden="true"></i>Ajouter un lien</a><br>
-        <a href="?p=updateliens"<i class="fa fa-pencil" aria-hidden="true"></i>Modifier un lien</a><br>
-        <a href="?p=deleteliens"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un liens</a>
-
-        <li>Pour les listes de liens</li>
-            <a href="https://www.formget.com/css-lists/">Pour faire mes listes de liens.</a><br>
-
-        <a href="?p=ajoutliens"<i class="fa fa-plus-circle" aria-hidden="true"></i>Ajouter un lien</a><br>
-        <a href="?p=updateliens"<i class="fa fa-pencil" aria-hidden="true"></i>Modifier un lien</a><br>
-        <a href="?p=deleteliens"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un liens</a>
-
-        <li>Pour m'aider dans ma mise en page de ma page cv pour l'intégration d'un paragraphe dans mon encadré faisant partie de mon titre.</li>
-        <a href="https://www.cssdebutant.com/debuter-en-css-integrer-du-css-page-HTML.html">Mise en page</a><br>
-        <a href="?p=ajoutliens"<i class="fa fa-plus-circle" aria-hidden="true"></i>Ajouter un lien</a><br>
-        <a href="?p=updateliens"<i class="fa fa-pencil" aria-hidden="true"></i>Modifier un lien</a><br>
-        <a href="?p=deleteliens"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un liens</a>
-
         <?php
 
-        $sql2 = "SELECT * FROM liens JOIN categorie_liens ON idcategorie_liens = categorie_liens_idcategorie_liens WHERE nom_cat_liens = 'recherches';";
+        $sql2 = "SELECT * FROM liens JOIN categorie_liens ON idcategorie_liens = categorie_liens_idcategorie_liens 
+                WHERE nom_cat_liens = 'recherches';";
         $recup_cat2 = mysqli_query($db, $sql2) or die(mysqli_error($db));
 
         foreach ($recup_cat2 as $item2) {
@@ -188,14 +129,15 @@ include "php/admin/navbar_deconnect.php";
             <li>
                 <?php
                 // comme on a encodé dans la bdd avec htmlentities et ENT_QUOTES, on utilise pour l'html autorisé (par le strip_tags) html_entity_decode avec le même flag ENT_QUOTES
-                echo html_entity_decode($item2['description'], ENT_QUOTES);
+                echo html_entity_decode($item2['description'], ENT_QUOTES)."<br>";
                 ?>
-                <a href="<?= $item2['url'] ?>" target="_blank"><?= $item2['nom_site'] ?></a>
+                <a href="<?= $item2['url'] ?>" target="_blank"><?= $item2['nom_site'] ?></a><br>
             </li>
             <a href="?p=ajoutliens"<i class="fa fa-plus-circle" aria-hidden="true"></i>Ajouter un lien</a><br>
-            <a href="?p=updateliens"<i class="fa fa-pencil" aria-hidden="true"></i>Modifier un lien</a><br>
-            <a href="?p=deleteliens"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un liens</a>
-
+            <a href="?p=updateliens&idliens=<?=$item2['idliens']?>"<i class="fa fa-pencil" aria-hidden="true"></i>Modifier un lien</a><br>
+            <a href="?p=deleteliens&idliens=<?=$item2['idliens']?>"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un liens</a><br>
+            <a class="btn btn-danger" href="?p=deleteliens&idliens=<?=$item2['idliens']?>&ok" role="button">Supprime définitivement !</a>
+            <a class="btn btn-secondary" href="?p=liens_admin" role="button">Ne pas supprimer</a>
             <?php
 
         }
@@ -207,24 +149,27 @@ include "php/admin/navbar_deconnect.php";
     <ol>
         <?php
 
-        $sql2 = "SELECT * FROM liens JOIN categorie_liens ON idcategorie_liens = categorie_liens_idcategorie_liens WHERE nom_cat_liens = 'espace_formateur';";
-        $recup_cat2 = mysqli_query($db, $sql2) or die(mysqli_error($db));
+        $sql3 = "SELECT * FROM liens JOIN categorie_liens ON idcategorie_liens = categorie_liens_idcategorie_liens 
+                WHERE nom_cat_liens = 'espace_formateur';";
+        $recup_cat3 = mysqli_query($db, $sql3) or die(mysqli_error($db));
 
-        foreach ($recup_cat2 as $item2) {
-        ?>
-                <li>
-                    <?php
-                    // comme on a encodé dans la bdd avec htmlentities et ENT_QUOTES, on utilise pour l'html autorisé (par le strip_tags) html_entity_decode avec le même flag ENT_QUOTES
-                    echo html_entity_decode($item['description'], ENT_QUOTES);
-                    ?>
-                    <a href="<?= $item['url'] ?>" target="_blank"><?= $item['nom_site'] ?></a>
-                </li>
+        foreach ($recup_cat3 as $item3) {
+            ?>
+            <li>
+                <?php
+                // comme on a encodé dans la bdd avec htmlentities et ENT_QUOTES, on utilise pour l'html autorisé (par le strip_tags) html_entity_decode avec le même flag ENT_QUOTES
+                echo html_entity_decode($item3['description'], ENT_QUOTES)."<br>";
+                ?>
+                <a href="<?= $item3['url'] ?>" target="_blank"><?= $item3['nom_site'] ?></a><br>
+            </li>
             <a href="?p=ajoutliens"<i class="fa fa-plus-circle" aria-hidden="true"></i>Ajouter un lien</a><br>
-            <a href="?p=updateliens"<i class="fa fa-pencil" aria-hidden="true"></i>Modifier un lien</a><br>
-            <a href="?p=deleteliens"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un liens</a>
-
+            <a href="?p=updateliens&idliens=<?=$item3['idliens']?>"<i class="fa fa-pencil" aria-hidden="true"></i>Modifier un lien</a><br>
+            <a href="?p=deleteliens&idliens=<?=$item3['idliens']?>"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un liens</a><br>
+            <a class="btn btn-danger" href="?p=deleteliens&idliens=<?=$item3['idliens']?>&ok" role="button">Supprime définitivement !</a>
+            <a class="btn btn-secondary" href="?p=liens_admin" role="button">Ne pas supprimer</a>
             <?php
-            }
+
+        }
         ?>
     </ol>
     <footer>

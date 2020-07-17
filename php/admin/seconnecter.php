@@ -16,9 +16,9 @@ if (isset($_POST['login'], $_POST['pwd'])) {
 
 
 //connexion à la db mysqli_28
-        $db = mysqli_connect('Localhost', 'root', '', 'portfolio2020', 3308);
+       // $db = mysqli_connect('Localhost', 'root', '', 'portfolio2020', 3308);
 //encodage en utf8
-        mysqli_set_charset($db, 'utf8');
+       // mysqli_set_charset($db, 'utf8');
 
         //requête
         $sql = "SELECT * FROM adminpres WHERE login='$thelogin'AND pwd='$thepwd'";
