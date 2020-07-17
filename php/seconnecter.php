@@ -10,7 +10,7 @@ if (isset($_POST['login'], $_POST['pwd'])) {
     if (!empty($thelogin) && !empty($thepwd)) {
 
         //requête
-        $sql = "SELECT * FROM adminpres WHERE login='$thelogin'AND pwd='$thepwd'";
+        $sql = "SELECT * FROM adminpres WHERE login='$thelogin'AND pwd='$thepwd';";
 
         //requête mysqli
         $recup = mysqli_query($db, $sql);
@@ -25,8 +25,9 @@ if (isset($_POST['login'], $_POST['pwd'])) {
             //on va créer notre variable de session de vérification et on va la remplir avec le PHPSESSID de notre session
             $_SESSION['iddemasession'] = session_id();
             //redirection vers l'accueil
-           header('Location: ./?p=accueil_admin');
+            header('Location: ./?p=accueil_admin');
             // var_dump($_SESSION);
+
         }
     }
 }

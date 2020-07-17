@@ -162,9 +162,7 @@ CREATE TABLE IF NOT EXISTS `liste_contact` (
   `prenom` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
   `message` varchar(2000) NOT NULL,
-  `adminpres_idadminpres` tinyint(2) NOT NULL,
-  PRIMARY KEY (`idliste_contact`),
-  KEY `fk_liste-contact_adminpres1_idx` (`adminpres_idadminpres`)
+  PRIMARY KEY (`idliste_contact`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --

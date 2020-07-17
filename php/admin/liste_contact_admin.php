@@ -73,7 +73,7 @@ include "php/admin/navbar_deconnect.php";
     <div class="form-group row">
         <label for="prenom" class="col-sm-2 col-form-label offset-sm-1">Prénom:</label>
         <div class="col-sm-6">
-            <input type="password" class="form-control" id="prenom" name="prenom" placeholder="Prénom">
+            <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Prénom">
         </div>
     </div>
     <div class="form-group row">
@@ -107,20 +107,17 @@ include "php/admin/navbar_deconnect.php";
     </thead>
     <tbody>
     <?php
-    if (isset($_GET['idliste_contact']) && ctype_digit($_GET['idliste_contact'])) {
-        $idliste_contact = (int)$_GET['idliste_contact'];
+    if (isset($_GET['idliste_contact'])) {
         /*
          *  $sql="SELECT c.idcategorie_liens, c.nom_cat_liens, l.idliens, l.nom_site, l.url, l.description
         FROM categorie_liens c
         INNER JOIN liens l ON l.categorie_liens_idcategorie_liens = c.idcategorie_liens;";
          */
-        $sql2 = "SELECT l.idliste_contact, l.nom, l.prenom, l.email, l.message 
-                FROM adminpres a INNER JOIN liste_contact l ON l.adminpres_idadminpres = a.idadminpres;";
+        $sql2 = "SELECT idliste_contact, nom, prenom, email, message FROM liste_contact;";
         $contact = mysqli_query($db, $sql2) or die(mysqli_error($db));
         $recup_contact = mysqli_num_rows($contact);
 
-        $count = mysqli_num_rows($recup_contact);
-        if (!$count) {
+        if (!$recup_contact) {
             $message2 = "Pas encore de contact pour le moment";
         }
         foreach ($contact as $item) {

@@ -4,3 +4,6 @@ Database/dbmailcontact.mwb
 Database/dbpres.mwb
 Database/dbpres.mwb.bak
 .idea/vcs.xml
+php/connectligne.php
+php/admin/seconnecter.php
+php/sedeconnecter.php
