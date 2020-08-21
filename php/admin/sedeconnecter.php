@@ -21,5 +21,5 @@ if (ini_get("session.use_cookies")) {
 // Finalement, on détruit la session.
 session_destroy();
 
-// redirection vers l'accueil public
-header("Location: php/seconnecter.php");
+// redirection vers la page pour se reconnecter
+header("Location: ?p=myadmin");

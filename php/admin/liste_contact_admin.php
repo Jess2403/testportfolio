@@ -124,7 +124,7 @@ include "php/admin/navbar_deconnect1.php";
         foreach ($contact as $item) {
             ?>
             <tr>
-                <th scope="row">1</th>
+                <th scope="row"><?=$item['idliste_contact']?></th>
                 <td><?= $item['nom'] ?></td>
                 <td><?= $item['prenom'] ?></td>
                 <td><?= $item['email'] ?></td>

@@ -28,6 +28,10 @@ th {
     margin-left: 12vw;
     margin-right: 12vw;
 }
+td {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+}
 .footer {
     text-align: center;
     color: white;
