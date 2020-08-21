@@ -13,6 +13,6 @@
         <li><a href="?p=cv_admin">CV</a></li>
         <li><a href="?p=liens_admin">LIENS</a></li>
         <li><a href="?p=liste_contact">CONTACT</a></li>
-        <li><a href="?p=myadmin" class="deconnect">SE DECONNECTER</a></li>
+        <li><a href="?p=deconnect" class="deconnect">SE DECONNECTER</a></li>
     </ul>
 </nav>

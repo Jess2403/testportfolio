@@ -135,17 +135,16 @@ include "php/admin/navbar_deconnect1.php";
         }
     }
             ?>
-    <footer>
-        <p class="liens" >
-            <a href="?p=liens_admin">Précédant</a>/
-            <a href="?p=accueil_admin">Retour à l'accueil de l'admin</a></p><br>
-        <br>
-        <hr>
-        <p class="footer">Copyright &copy; CF2M 2020</p>
-    </footer>
-
     </tbody>
         </table>
+<footer>
+    <p class="liens" >
+        <a href="?p=liens_admin">Précédant</a>/
+        <a href="?p=accueil_admin">Retour à l'accueil de l'admin</a></p><br>
+    <br>
+    <hr>
+    <p class="footer">Copyright &copy; CF2M 2020</p>
+</footer>
         </body>
         </html>
 

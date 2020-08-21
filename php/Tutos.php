@@ -19,8 +19,9 @@
     <h1>Voici mes Tutos</h1>
     <h2>Vidéo YouTube</h2>
         <p>Nous allons voir dans cette vidéo comment créer une base de donnée avec php myAdmin!</p>
+        <p>Pour voir cette vidéo dans un nouvel onglet cliquer <a href="https://www.youtube.com/embed/hDS-n64YqWs" target="_blank">ici</a>!</p>
         <div class="container">
-            <iframe  class="video1" width="640" height="360" src="https://www.youtube.com/embed/hDS-n64YqWs"<!--frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen-->></iframe>
+            <iframe  class="video1" width="600vw" height="360vh" src="https://www.youtube.com/embed/hDS-n64YqWs"<!--frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen-->></iframe>
         </div>
             <p>J'ai choisi cette vidéo car elle est courte simple et pratique. Elle nous apprends comment, déjà pouvoir télécharger un serveur comme Wampp, Car sans serveur nous ne pouvons pas créer de base de données pour nos sites internet</p>
         <p>Ce monsieur nous explique aussi comment ajouter des lignes dans une base de données. Ajouter et/ou supprimer des tables</p>
@@ -28,7 +29,7 @@
     <h2>Voici mon Tuto</h2>
         <p>Dans ce tuto, je vais vous guider pour faire une base de donnée avec php myAdmin.</p><br>
     <h3>Tout d'abord vous devez télécharger un serveur style Wamp.</h3>
-    <p>Télécharger Wamp <a href="https://www.wampserver.com/">ici</a></p>
+    <p>Télécharger Wamp <a href="https://www.wampserver.com/" target="_blank">ici</a></p>
         <p>Il vous suffit de suivre les instructions de téléchargement.</p>
         <p>Ensuite vous devez ouvrir wampp, activez les services en cliquant droit sur l'icône qui se trouvera dans votre barre des
                 tâches, dans le menu appuyer sur activer les services, quand il passe de rouge à vert, ça y est les services sont activés.</p>
@@ -55,6 +56,7 @@
     <h2>Bon amusement à confectionner vos bases de données!</h2>
         <p>Si vous voulez des précisions ou si vous avez des questions j'essaierai de vous aider du mieux que je peux en m'envoyant
                 votre mail via la page de contact de ce site.</p><br><br>
+</div>
     <footer>
         <p class="liens" >
             <a href="?p=presentation">Précédant</a>/
@@ -63,7 +65,7 @@
         <hr>
         <p class="footer">Copyright &copy; CF2M 2020</p>
     </footer>
-</div>
+
 </section>
 </body>
 </html>

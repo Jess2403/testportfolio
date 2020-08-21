@@ -40,20 +40,14 @@ mysqli_set_charset($db, "utf8");
             case "accueil_admin":
                 include "php/admin/accueil_admin.php";
                 break;
-            case "navbar_deconnect":
-                include "php/admin/navbar_deconnect.php";
+            case "navbar_deconnect1":
+                include "php/admin/navbar_deconnect1.php";
                 break;
             case "deconnect":
                 include "php/admin/sedeconnecter.php";
                 break;
             case "droitpres":
                 include "php/admin/droitpres.php";
-                break;
-            case "ajoutpres":
-                include "php/admin/ajoutpres.php";
-                break;
-            case "updatetpres":
-                include "php/admin/updatepres.php";
                 break;
             case "Tutos_admin":
                 include "php/admin/Tutos_admin.php";
@@ -63,9 +57,6 @@ mysqli_set_charset($db, "utf8");
                 break;
             case "cv_admin":
                 include "php/admin/cv_admin.php";
-                break;
-            case "deletepres":
-                include "php/admin/deletepres.php";
                 break;
             case "droitliens":
                 include "php/admin/droitliens.php";

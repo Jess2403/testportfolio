@@ -19,6 +19,7 @@ include "php/admin/navbar_deconnect1.php"
     <h1>Voici mes Tutos</h1>
     <h2>Vidéo YouTube</h2>
     <p>Nous allons voir dans cette vidéo comment créer une base de donnée avec php myAdmin!</p>
+    <p>Pour voir cette vidéo dans un nouvel onglet cliquer <a href="https://www.youtube.com/embed/hDS-n64YqWs" target="_blank">ici</a>!</p>
     <div class="container">
         <iframe  class="video1" width="640" height="360" src="https://www.youtube.com/embed/hDS-n64YqWs"<!--frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen-->></iframe>
     </div>
@@ -55,6 +56,7 @@ include "php/admin/navbar_deconnect1.php"
     <h2>Bon amusement à confectionner vos bases de données!</h2>
     <p>Si vous voulez des précisions ou si vous avez des questions j'essaierai de vous aider du mieux que je peux en m'envoyant
         votre mail via la page de contact de ce site.</p><br><br>
+</div>
     <footer>
         <p class="liens" >
             <a href="?p=presadmin">Précédant</a>/
@@ -63,7 +65,7 @@ include "php/admin/navbar_deconnect1.php"
         <hr>
         <p class="footer">Copyright &copy; CF2M 2020</p>
     </footer>
-</div>
+
 </section>
 </body>
 </html>

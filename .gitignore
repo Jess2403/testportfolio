@@ -15,3 +15,6 @@ img/pencil-icon-vector-21894351.jpg
 php/admin/pres_admin.php
 img/smoke.mp4
 img.update1.jpg
+php/admin/ajoutpres.php
+php/admin/deletepres.php
+php/admin/updatepres.php

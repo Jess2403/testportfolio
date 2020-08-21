@@ -28,3 +28,14 @@ th {
     margin-left: 12vw;
     margin-right: 12vw;
 }
+.footer {
+    text-align: center;
+    color: white;
+}
+.liens {
+    text-align: right;
+    color: white;
+}
+.liens a {
+    color: white;
+}

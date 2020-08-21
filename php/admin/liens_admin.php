@@ -30,7 +30,7 @@ if(!isset($_SESSION['iddemasession'])||$_SESSION['iddemasession']!==session_id()
     <link rel="stylesheet" href="css/navbar_deconnect1.css">
     <link rel="stylesheet" href="css/liens.css">
 </head>
-<body>
+<div>
 <?php
 include "php/admin/navbar_deconnect1.php";
 ?>
@@ -173,6 +173,8 @@ include "php/admin/navbar_deconnect1.php";
         }
         ?>
     </ol>
+</div>
+</div>
     <footer>
         <p class="liens" >
             <a href="?p=cv_admin">Précédant</a>/
@@ -181,7 +183,7 @@ include "php/admin/navbar_deconnect1.php";
         <hr>
         <p class="footer">Copyright &copy; CF2M 2020</p>
     </footer>
-</div>
+
 <?php
     include "php/javascript.php"
 ?>

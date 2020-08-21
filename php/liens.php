@@ -108,6 +108,8 @@ include "navbar_connect1.php";
         }
         ?>
     </ol>
+</div>
+</div>
     <footer>
         <p class="liens" >
             <a href="?p=projet">Précédant</a>/
@@ -116,7 +118,7 @@ include "navbar_connect1.php";
         <hr>
         <p class="footer">Copyright &copy; CF2M 2020</p>
     </footer>
-</div>
+
 <?php
 include "php/javascript.php"
 ?>

@@ -10,7 +10,7 @@ body {
 }
 .div1 {
     margin-top: 5vh;
-    background-color: rgb(208, 213, 219);
+    background-color: rgba(0, 0, 0, 0.8);
     text-align: center;
     padding: 50px;
     margin-right: 25px;
@@ -30,8 +30,8 @@ h1 {
     font-family: 'Merriweather', serif;
     font-size: 5vw;
     text-transform: uppercase;
-    color: darkred;
-    border: 3px solid darkred;
+    color: #fc0f03;
+    border: 3px solid #fc0f03;
     border-radius: 60px 5px;
     width: auto;
     text-align: center;
@@ -43,6 +43,7 @@ h1 {
 .liste1 {
     font-size: 1.5vw;
     text-align: left;
+    color: white;
 }
 
 h2 {
@@ -61,17 +62,22 @@ h2 {
 }
 p {
     font-size: 1.5vw;
-    color: black;
+    color: white;
     margin-left: 50px;
     margin-right: 50px;
 }
 .footer {
     text-align: center;
+    color: white;
 }
 .liens {
     text-align: right;
-    color: red;
+    color: white;
 }
+.liens a {
+    color: white;
+}
+.
 @media screen and (max-width: 950px) {
 
     .div1{
