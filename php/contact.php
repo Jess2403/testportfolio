@@ -6,17 +6,18 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/navbar_connect1.css">
         <link rel="stylesheet" type="text/css" href="css/contact.css">
     </head>
     <body class="body">
     <?php
-        include "php/navbar_connect.php";
+        include "php/navbar_connect1.php";
     ?>
     <div>
         <h1>Contact</h1>
-        <div class="container">
+        <!--<div class="container">-->
         <form method="post" action="?p=contact1">
-            <fieldset>
+            <fieldset class="container">
                 <legend>Vos coordonnées</legend>
                 <div class="row">
                     <div class="col-25">
@@ -42,7 +43,6 @@
                         <input type="text" id="email" name="email" required>
                     </div>
                 </div>
-                </div>
                 <div class="row">
                     <div class="col-25">
                         <label id="label">Votre message</label>
@@ -56,7 +56,7 @@
                 </div>
             </fieldset>
         </form>
-        </div>
+        <!--</div>-->
             <footer>
                 <p class="liens" >
                     <a href="?p=cv">Précédant</a>/

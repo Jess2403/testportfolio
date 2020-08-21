@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,16 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/navbar_connect1.css">
     <link type="text/css" rel="stylesheet" href="css/cv1.css"/>
 </head>
 <body>
 <?php
-    include "php/navbar_connect.php";
+    include "php/navbar_connect1.php";
 ?>
-<main>
-    <div class="titre1">
+
+    <!--<div class="titre1">-->
         <h1>Curriculum Vitae</h1>
-    </div>
+   <!-- </div>-->
     <section class="row">
         <div class="col-lg-4 offset-lg-0 col-md-6 offset-md-0 col-sm-8 offset-sm-2 mb-2">
             <article class="card">
@@ -151,7 +151,7 @@
         </table>
     </section>
         <div class="col-12 offset-2">
-            <h3 style="margin: 30px auto 40px auto"><em>Techniques de salle et de cuisine, cours de sécurité et hygiène, etc…<br>
+            <h3 style="margin: 30px auto 40px auto; color: #bdbdbb;"><em>Techniques de salle et de cuisine, cours de sécurité et hygiène, etc…<br>
                     Participation aux banquets, Restaurant pédagogique (à la carte).</em></h3>
         </div>
     <section class="row">
@@ -262,7 +262,7 @@
             </tr>
         </table>
     </section>
-</main>
+
 <div class="encadre1">
     <h2>Qualités – Atouts:</h2>
     <p>Ambitieuse, rigoureuse, organisée, minutieuse et confiance en moi. Sérieuse, ponctuelle et motivée à relever les défis.</p>

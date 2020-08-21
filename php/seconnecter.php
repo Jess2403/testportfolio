@@ -38,16 +38,18 @@ if (isset($_POST['login'], $_POST['pwd'])) {
     <meta charset="UTF-8">
     <title>MyAdmin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/navbar_connect1.css">
     <link rel="stylesheet" type="text/css" href="css/seconnecter.css">
 </head>
 <body>
 <?php
-    include "php/navbar_connect.php";
+    include "navbar_connect1.php";
 ?>
 <h1>Se connecter à la partie admin</h1>
-<div class="container">
+<div>
     <form method="post" action="">
-        <fieldset class="fieldset">
+        <fieldset class="container">
             <legend>Se connecter</legend>
             <div class="row">
                 <div class="col-25">
@@ -62,16 +64,20 @@ if (isset($_POST['login'], $_POST['pwd'])) {
                     <label for="pwd">Mot de passe:</label>
                 </div>
                 <div class="col-75">
-                    <input type="text" id="pwd" name="pwd" required>
+                    <input type="password" id="pwd" name="pwd" required>
                 </div>
             </div>
-            <!--<form class="form-inline my-3 my-lg-4">-->
-                <input type="submit" value="Envoyer" class="offset-5 col-2"><!--<a href="?p=accueil_admin">Se connecter</a>-->
-                <!--<button class="badge badge-pill badge-lg my-2 my-sm-0" type="button"><a href="?p=accueil_admin" class="badge badge-primary" style="color:white;">SE CONNECTER</a></button>-->
-            <!--</form>-->
+                <input type="submit" value="Envoyer" class="offset-5 col-2">
         </fieldset>
     </form>
 </div>
-
+<footer>
+    <p class="liens" >
+        <a href="?p=contact">Précédant</a>/
+        <a href="./">Retour vers Home</a></p><br>
+    <br>
+    <hr>
+    <p class="footer">Copyright &copy; CF2M 2020</p>
+</footer>
 </body>
 </html>

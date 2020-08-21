@@ -5,18 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tutos</title>
+    <link rel="stylesheet" href="css/navbar_connect1.css">
     <link rel="stylesheet" href="css/Tutos.css">
 </head>
 <body>
 <?php
-    include "php/navbar_connect.php"
+    include "php/navbar_connect1.php"
 ?>
-<div class="div1">
+<div class="container">
     <img src="img/fondlogo.png" class="logo02"/>
+</div>
+<div class="div1">
     <h1>Voici mes Tutos</h1>
     <h2>Vidéo YouTube</h2>
         <p>Nous allons voir dans cette vidéo comment créer une base de donnée avec php myAdmin!</p>
-        <div class="div2">
+        <div class="container">
             <iframe  class="video1" width="640" height="360" src="https://www.youtube.com/embed/hDS-n64YqWs"<!--frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen-->></iframe>
         </div>
             <p>J'ai choisi cette vidéo car elle est courte simple et pratique. Elle nous apprends comment, déjà pouvoir télécharger un serveur comme Wampp, Car sans serveur nous ne pouvons pas créer de base de données pour nos sites internet</p>

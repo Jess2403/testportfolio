@@ -5,19 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Projet</title>
+    <link rel="stylesheet" href="css/navbar_connect1.css">
     <link rel="stylesheet" href="css/projet.css">
 </head>
 <body>
 <?php
-    include "php/navbar_connect.php";
+    include "php/navbar_connect1.php";
 ?>
-<div class="div1">
+<div class="container">
     <img class="logo02" src="img/fondlogo.png"/>
+</div>
+<div class="div1">
     <h1>Voici quelques-un de mes projets en cours!</h1>
     <p>Vous trouverez ci-dessous quelques liens vers mes autres projets en cours pour l'instant il y en a peu mais je compte bien y rajouter quelques liens d'ici la fin de la formation</p>
     <h2>Mon début de projet personnel de site de rencontre</h2>
     <p><a href="http://jessica.webdev-cf2m.be/amourtoujours/php/">Amour Toujours</a></p><br>
-    <p>Je dois encore pas mal le paufiner et le énormément le développer</p>
+    <p>Je dois encore pas mal le paufiner et énormément le développer</p>
     <h2>Mon projet de préformation</h2>
     <p><a href="http://jessica.webdev-cf2m.be/projetpersonnel/html/index.html">Site préfoweb</a></p><br>
     <h2> Quelques idées futures:</h2>
@@ -27,6 +30,7 @@
                 Et ainsi je saurai si je peux diminuer ou augmenter mes prix comparé au marché</li>
         <li>Faire une appli mobile jeux d'échec</li>
         <li>Faire un répertoire de vidéo karaoké téléchargeable.</li>
+        <li>Faire le site web pour ma meilleure amie qui veut faire de la pédicure indépendante.</li>
     </ol>
 <footer>
     <p class="liens" >

@@ -27,16 +27,17 @@ if(!isset($_SESSION['iddemasession'])||$_SESSION['iddemasession']!==session_id()
     <title>Portfolio | Admin - Liens</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="css/navbar_deconnect1.css">
     <link rel="stylesheet" href="css/liens.css">
 </head>
 <body>
 <?php
-include "php/admin/navbar_deconnect.php";
+include "php/admin/navbar_deconnect1.php";
 ?>
-
-<div class="div1">
+<div class="container">
     <img src="img/fondlogo.png" class="logo02"/>
+</div>
+<div class="div1">
     <h1 class="titre1">Portfolio | Admin - Liens</h1>
     <pre>
     <?php
@@ -107,7 +108,7 @@ include "php/admin/navbar_deconnect.php";
                     <a href="?p=ajoutliens"<i class="fa fa-plus-circle" aria-hidden="true"></i>Ajouter un lien</a><br>
                     <a href="?p=updateliens&idliens=<?=$item1['idliens']?>"<i class="fa fa-pencil" aria-hidden="true"></i>Modifier un lien</a><br>
                     <a href="?p=deleteliens&idliens=<?=$item1['idliens']?>"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un liens</a><br>
-                    <a class="btn btn-danger" href="?p=deleteliens&idliens=<?=$item1['idliens']?>&ok" role="button">Supprime définitivement !</a>
+                    <a class="btn btn-danger" href="?p=deleteliens&idliens=<?=$item1['idliens']?>&ok" role="button">Supprimer définitivement !</a>
                     <a class="btn btn-secondary" href="?p=liens_admin" role="button">Ne pas supprimer</a>
                     <?php
 
@@ -136,7 +137,7 @@ include "php/admin/navbar_deconnect.php";
             <a href="?p=ajoutliens"<i class="fa fa-plus-circle" aria-hidden="true"></i>Ajouter un lien</a><br>
             <a href="?p=updateliens&idliens=<?=$item2['idliens']?>"<i class="fa fa-pencil" aria-hidden="true"></i>Modifier un lien</a><br>
             <a href="?p=deleteliens&idliens=<?=$item2['idliens']?>"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un liens</a><br>
-            <a class="btn btn-danger" href="?p=deleteliens&idliens=<?=$item2['idliens']?>&ok" role="button">Supprime définitivement !</a>
+            <a class="btn btn-danger" href="?p=deleteliens&idliens=<?=$item2['idliens']?>&ok" role="button">Supprimer définitivement !</a>
             <a class="btn btn-secondary" href="?p=liens_admin" role="button">Ne pas supprimer</a>
             <?php
 
@@ -165,7 +166,7 @@ include "php/admin/navbar_deconnect.php";
             <a href="?p=ajoutliens"<i class="fa fa-plus-circle" aria-hidden="true"></i>Ajouter un lien</a><br>
             <a href="?p=updateliens&idliens=<?=$item3['idliens']?>"<i class="fa fa-pencil" aria-hidden="true"></i>Modifier un lien</a><br>
             <a href="?p=deleteliens&idliens=<?=$item3['idliens']?>"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un liens</a><br>
-            <a class="btn btn-danger" href="?p=deleteliens&idliens=<?=$item3['idliens']?>&ok" role="button">Supprime définitivement !</a>
+            <a class="btn btn-danger" href="?p=deleteliens&idliens=<?=$item3['idliens']?>&ok" role="button">Supprimer définitivement !</a>
             <a class="btn btn-secondary" href="?p=liens_admin" role="button">Ne pas supprimer</a>
             <?php
 
@@ -174,8 +175,8 @@ include "php/admin/navbar_deconnect.php";
     </ol>
     <footer>
         <p class="liens" >
-            <a href="?p=projet">Précédant</a>/
-            <a href="?p=cv1">Suivant</a></p><br>
+            <a href="?p=cv_admin">Précédant</a>/
+            <a href="?p=liste_contact">Suivant</a></p><br>
         <br>
         <hr>
         <p class="footer">Copyright &copy; CF2M 2020</p>

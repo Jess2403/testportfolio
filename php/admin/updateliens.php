@@ -79,19 +79,26 @@ if(isset($_GET['idliens'])&&ctype_digit($_GET['idliens'])){
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/accueil_admin.css">
+    <link rel="stylesheet" type="text/css" href="css/navbar_deconnect1.css">
+    <link rel="stylesheet" type="text/css" href="css/liste_contact_admin.css">
     <title>Portfolio | Modifier le lien : <?php echo (isset($erreur))? $erreur: $liens['nom_site'] ?></title>
 
+    <style>
+        p {
+            font-size: 1.5vw;
+            color: white;
+        }
+        h2 {
+            color: white;
+        }
+    </style>
 </head>
 <body>
 <?php
-include "navbar_deconnect.php";
+include "navbar_deconnect1.php";
 ?>
 <header>
-    <h1 class="display-4 text-center mb-4">Portfolio | Administration des liens | Modifier le lien :</h1>
-    <h1 class="text-center md-4">Admin - Modifier liens</h1>
-    <p class="lead text-center">Ce formulaire vous permet d'ajouter un lien dans la liste</p>
-    <h2 class="display-5 text-center mb-4"><?php echo (isset($erreur))? $erreur: $liens['nom_site'] ?></h2>
+    <h1 class="display-4 text-center mb-4">Portfolio | Admin - Modifier le lien :</h1>
 </header>
 
 <main role="main" class="container">
@@ -101,41 +108,42 @@ include "navbar_deconnect.php";
         echo "<hr><h3>$message</h3><hr>";
     }
    ?>
-
+    <p class="lead text-center">Ce formulaire vous permet de modifier un lien dans la liste</p>
+    <h2 class="display-5 text-center mb-4"><?php echo (isset($erreur))? $erreur: $liens['nom_site'] ?></h2>
     <form id="formulaire" method="post" action="?p=updateliens&idliens=<?=$idliens?>&ok">
         <p><strong>Veuillez choisir une catégorie ci-dessous pour rajouter les liens</strong></p>
         <div class="form-check form-group offset-1">
-            <input class="form-check-input" type="radio" name="categorie_liens" id="animations" value="1" checked>
-            <label class="form-check-label" for="animations">Pour faire les animations</label>
+            <input class="form-check-input" style="font-size: 1.5vw;" type="radio" name="categorie_liens" id="animations" value="1" checked>
+            <label class="form-check-label" style="font-size: 1.5vw;" for="animations">Pour faire les animations</label>
         </div>
         <div class="form-check form-group offset-1">
-            <input class="form-check-input" type="radio" name="categorie_liens" id="recherches" value="2"">
-            <label class="form-check-label" for="recherches">Pour faire des recherches</label>
+            <input class="form-check-input" style="font-size: 1.5vw;" type="radio" name="categorie_liens" id="recherches" value="2"">
+            <label class="form-check-label" style="font-size: 1.5vw;" for="recherches">Pour faire des recherches</label>
         </div>
         <div class="form-check form-group offset-1">
-            <input class="form-check-input" type="radio" name="categorie_liens" id="espace-formateur" value="3">
-            <label class="form-check-label" for="espace-formateur">Pour l'espace-formateur</label>
+            <input class="form-check-input" style="font-size: 1.5vw;" type="radio" name="categorie_liens" id="espace-formateur" value="3">
+            <label class="form-check-label"  style="font-size: 1.5vw;" for="espace-formateur">Pour l'espace-formateur</label>
         </div>
         <div class="form-group row">
-            <label class="col-md-3" for="nom_site"><strong>Nom du site(*)</strong></label>
-            <input type="text" class="form-control col-md-9" id="nom_site" name="nom_site" placeholder="Entrez le nom du site" required value="<?=$liens['nom_site']?>">
+            <label class="col-md-3" style="font-size: 1.5vw;"for="nom_site"><strong>Nom du site(*)</strong></label>
+            <input type="text" class="form-control col-md-9" style="font-size: 1.5vw;" id="nom_site" name="nom_site" placeholder="Entrez le nom du site" required value="<?=$liens['nom_site']?>">
             <div class="invalid-feedback text-left offset-md-3">Vous devez entrez le nom du site</div>
         </div>
         <div class="form-group row">
-            <label class="col-md-3" for="url"><strong>Adresse du site(*)</strong></label>
-            <input type="url" class="form-control col-md-9" id="url" name="url" placeholder="Entrez l'adresse du site(URL)" required value="<?=$liens['url']?>">
+            <label class="col-md-3" style="font-size: 1.5vw;" for="url"><strong>Adresse du site(*)</strong></label>
+            <input type="url" class="form-control col-md-9" id="url" style="font-size: 1.5vw;" name="url" placeholder="Entrez l'adresse du site(URL)" required value="<?=$liens['url']?>">
             <div class="invalid-feedback text-left offset-md-3">Vous devez renseigner l'URL du site</div>
         </div>
         <div class="form-group row">
-            <label class="col-md-3" for="description"><strong>Description du site</strong></label>
-            <textarea class="form-control col-md-9" id="description" name="description" placeholder="Entrez une description du site"><?=$liens['description']?></textarea>
+            <label class="col-md-3" style="font-size: 1.5vw;" for="description"><strong>Description du site</strong></label>
+            <textarea class="form-control col-md-9" style="font-size: 1.5vw;" id="description" name="description" placeholder="Entrez une description du site"><?=$liens['description']?></textarea>
             <div class="invalid-feedback text-left offset-md-3">Vous devez entrer une description</div>
         </div>
         <div class="form-group row">
             <p class="form-text text-center col-md-12">(*) Champs obligatoire</p>
         </div>
         <input type="hidden" name="idliens" value="<?=$idliens?>">
-        <button type="submit" class="btn btn-primary">Modifier les données</button>
+        <button type="submit" class="btn btn-primary btn-block col-md-4 offset-md-4" style="text-align: center; font-size: 1.5vw;">Modifier les données</button>
     </form>
     <?php
     include "php/javascript.php";

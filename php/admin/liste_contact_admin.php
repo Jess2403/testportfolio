@@ -52,43 +52,43 @@ if (mail($for, $subject, $message, $headers)){
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
+    <link rel="stylesheet" type="text/css" href="css/navbar_deconnect1.css">
     <link rel="stylesheet" type="text/css" href="css/liste_contact_admin.css">
 </head>
 
 <body class="body">
 <?php
-include "php/admin/navbar_deconnect.php";
+include "php/admin/navbar_deconnect1.php";
 ?>
 <header class="pb-1">
     <h1 class="display-3 text-center mb-4">Admin | Formulaire de contact</h1>
 </header>
-<form method="post" action="">
+<form method="post" action="" style="margin-left: 20vw;">
     <div class="form-group row">
-        <label for="nom" class="col-sm-2 col-form-label offset-sm-1">Nom:</label>
+        <label for="nom" class="col-sm-2 col-form-label offset-sm-1" style="font-size: 1.5vw;">Nom:</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom">
+            <input type="text" class="form-control" style="font-size: 1.5vw;" id="nom" name="nom" placeholder="Nom">
         </div>
     </div>
     <div class="form-group row">
-        <label for="prenom" class="col-sm-2 col-form-label offset-sm-1">Prénom:</label>
+        <label for="prenom" class="col-sm-2 col-form-label offset-sm-1" style="font-size: 1.5vw;">Prénom:</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Prénom">
+            <input type="text" class="form-control" style="font-size: 1.5vw;" id="prenom" name="prenom" placeholder="Prénom">
         </div>
     </div>
     <div class="form-group row">
-        <label for="email" class="col-sm-2 col-form-label offset-sm-1">Email:</label>
+        <label for="email" class="col-sm-2 col-form-label offset-sm-1" style="font-size: 1.5vw;">Email:</label>
         <div class="col-sm-6">
-            <input type="email" class="form-control" id="email" name="email" placeholder="Votre email">
+            <input type="email" class="form-control" style="font-size: 1.5vw;" id="email" name="email" placeholder="Votre email">
         </div>
     </div>
     <div class="form-group row">
-        <label for="message" class="col-sm-2 col-form-label offset-sm-1">Message:</label>
-        <textarea id="message" name="message" class="form-control col-sm-6 ml-3 mr-3" placeholder="Entrez votre message"></textarea>
+        <label for="message" class="col-sm-2 col-form-label offset-sm-1" style="font-size: 1.5vw;">Message:</label>
+        <textarea id="message" name="message" class="form-control col-sm-6 ml-3 mr-3" style="font-size: 1.5vw;" placeholder="Entrez votre message"></textarea>
     </div>
     <div class="form-group row">
         <div class="col-sm-6 offset-sm-5">
-            <button type="submit" class="btn btn-primary">Envoyer</button>
+            <button type="submit" class="btn btn-primary" style="font-size: 1.5vw;">Envoyer</button>
         </div>
     </div>
 </form>
@@ -96,9 +96,10 @@ include "php/admin/navbar_deconnect.php";
 <header class="pb-1">
     <h1 class="display-3 text-center mb-4"> Admin | Liste de contacts</h1>
 </header>
-<table class="table table-md col-10 offset-1">
+<table class="table table-md col-10">
     <thead class="thead-bordered-2px-double-dark bg-secondary text-center">
     <tr>
+        <th scope="col">Numéro</th>
         <th scope="col">Nom</th>
         <th scope="col">Prénom</th>
         <th scope="col">Email</th>
@@ -133,10 +134,17 @@ include "php/admin/navbar_deconnect.php";
 
         }
     }
-
-
             ?>
-            </tbody>
+    <footer>
+        <p class="liens" >
+            <a href="?p=liens_admin">Précédant</a>/
+            <a href="?p=accueil_admin">Retour à l'accueil de l'admin</a></p><br>
+        <br>
+        <hr>
+        <p class="footer">Copyright &copy; CF2M 2020</p>
+    </footer>
+
+    </tbody>
         </table>
         </body>
         </html>

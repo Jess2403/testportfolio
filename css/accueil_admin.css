@@ -1,17 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Orbitron:wght@700&display=swap');
 body {
-    background: url("../img/parchemingris.jpg");
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
+    background: url("../img/galaxie2.gif");
     background-size: cover;
+    font-family: 'Orbitron', sans-serif;
+    color: #000;
+    margin: 0;
+    padding: 0;
 }
-header {
-    background-color: rgba(46, 50, 53, 0.3);
-    color: white;
-    margin: 5% 20%;
+section {
+    background: transparent;
 }
-h2 {
+video {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+}
+section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #f70f07, #5409d6, #f51450, #f514c4, #f53d14, #23f514);
+    pointer-events: none;
+    mix-blend-mode: color;
+}
+h1 {
+    margin: 26vh 0;
+    padding: 0 9vw;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
     text-align: center;
+    color: #ffffff;
+    font-size: /*4.3em*/5vw;
+    /*opacity: 0;*/
+}
+h1 span {
+    display: inline-block;
+    animation: smoke 1s linear forwards;
+    /*opacity: 0;*/
+}
+@keyframes smoke {
+    0% {
+        opacity: 0;
+        transform: rotateY(90deg);
+        filter: blur(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: rotateY(90deg);
+        filter: blur(0px);
+    }
+}
+h1 span:nth-child(1) {
+    animation-delay: 1s;
+}
+h1 span:nth-child(2) {
+    animation-delay: 1.2s;
+}
+h1 span:nth-child(3) {
+     animation-delay: 1.4s;
+ }
+h1 span:nth-child(4) {
+    animation-delay: 1.6s;
+}
+h1 span:nth-child(5) {
+    animation-delay: 1.8s;
+}
+h1 span:nth-child(6) {
+    animation-delay: 2s;
+}
+h1 span:nth-child(7) {
+    animation-delay: 2.2s;
+}
+h1 span:nth-child(8) {
+    animation-delay: 2.4s;
+}
+h1 span:nth-child(9) {
+    animation-delay: 2.6s;
+}
+h1 span:nth-child(10) {
+    animation-delay: 2.8s;
+}
+h1 span:nth-child(11) {
+    animation-delay: 3s;
+}
+h1 span:nth-child(12) {
+    animation-delay: 3.2s;
+}
+h1 span:nth-child(13) {
+    animation-delay: 3.4s;
+}
+h1 span:nth-child(14) {
+    animation-delay: 3.6s;
+}
+h1 span:nth-child(15) {
+    animation-delay: 3.8s;
+}
+h1 span:nth-child(16) {
+    animation-delay: 4s;
+}
+h1 span:nth-child(17) {
+    animation-delay: 4.2s;
+}
+h1 span:nth-child(18) {
+    animation-delay: 4.4s;
+}
+h1 span:nth-child(19) {
+    animation-delay: 4.6s;
+}
+h1 span:nth-child(20) {
+    animation-delay: 4.8s;
+}
+h1 span:nth-child(21) {
+    animation-delay: 5s;
+}
+h1 span:nth-child(22) {
+    animation-delay: 1s;
+}
+h1 span:nth-child(23) {
+    animation-delay: 1.2s;
+}
+h1 span:nth-child(24) {
+    animation-delay: 1.4s;
+}
+h1 span:nth-child(25) {
+    animation-delay: 1.6s;
+}
+h1 span:nth-child(26) {
+    animation-delay: 1.8s;
+}
+h1 span:nth-child(27) {
+    animation-delay: 2s;
+}
+h1 span:nth-child(28) {
+    animation-delay: 2.2s;
+}
+h1 span:nth-child(29) {
+    animation-delay: 2.4s;
+}
+h1 span:nth-child(30) {
+    animation-delay: 2.6s;
+}
+h1 span:nth-child(31) {
+    animation-delay: 2.8s;
+}
+h1 span:nth-child(32) {
+    animation-delay: 3s;
+}
+h1 span:nth-child(33) {
+    animation-delay: 3.2s;
+}
+h1 span:nth-child(34) {
+    animation-delay: 3.4s;
+}
+h1 span:nth-child(35) {
+    animation-delay: 3.6s;
+}
+h1 span:nth-child(36) {
+    animation-delay: 3.8s;
+}
+h1 span:nth-child(37) {
+    animation-delay: 4s;
 }
 .div1 {
     text-align: center;
+    color: #e6fa0a;
+}
+h2 {
+    font-size: 3vw;
+}
+h3 {
+    font-size: 2.5vw;
+}
+p {
+    font-size: 1.5vw;
+}
+.liens {
+    color: white;
+    text-align: right;
+}
+.liens a {
+    color: white;
+}
+.footer {
+    color: white;
+    text-align: center;
+}
+@media screen and (min-width: 480px) and (max-width:600px) {
+    video {
+        margin-top: 21vh ;
+    }
+}
+@media screen and (min-width: 650px) and (max-width: 800px){
+    h1 {
+        margin-top: 15vh;
+    }
+}
+@media screen and (max-width: 950px) {
+    h1 {
+        margin-top: 21vh;
+    }
 }

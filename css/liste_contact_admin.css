@@ -1,12 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Orbitron:wght@700&display=swap');
 body {
-    background: url("../img/parchemingris.jpg");
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
+    background-image: url("../img/galaxie2.gif");
     background-size: cover;
+    width: 90%;
+    height: auto;
+    font-family: 'Orbitron', sans-serif;
+}
+nav {
+    width: 110%!important;
 }
 header {
     background-color: rgba(46, 50, 53, 0.3);
-    color: white;
-    margin: 5% 20%;
-
+    color: #defa0a;
+    margin: 3vh 25vw;
+    width: 50vw;
+    height: auto;
+    font-size: 5vw;
+}
+label {
+    color: #FD5F00;
+}
+th {
+    color: #FD5F00;
+    font-size: 1.5vw;
+}
+.col-10 {
+    margin-left: 12vw;
+    margin-right: 12vw;
 }

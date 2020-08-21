@@ -53,57 +53,67 @@ else {
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-
-    <link rel="stylesheet" type="text/css" href="css/accueil_admin.css">
+    <link rel="stylesheet" type="text/css" href="css/navbar_deconnect1.css">
+    <link rel="stylesheet" type="text/css" href="css/liste_contact_admin.css">
     <title>Portfolio | Ajouter un lien</title>
     <style>
+        p {
+            font-size: 1.5vw;
+            color: white;
+        }
     </style>
 
 </head>
 <body>
 <?php
-include "php/admin/navbar_deconnect.php";
+include "php/admin/navbar_deconnect1.php";
 ?>
 <header>
-    <h1 class="display-4 text-center mb-4">Portfolio | Ajouter un lien</h1>
+    <h1 class="display-4 text-center mb-4">Portfolio | Admin - Ajouter un lien</h1>
 </header>
 <main role="main" class="container">
-    <h1 class="text-center md-4">Admin - Ajouter liens</h1>
     <p class="lead text-center">Ce formulaire vous permet d'ajouter un lien dans la liste</p>
     <form id="formulaire" method="post" action="">
         <p><strong>Veuillez choisir une catégorie ci-dessous pour rajouter les liens</strong></p>
         <div class="form-check form-group offset-1">
-            <input class="form-check-input" type="radio" name="categorie_liens" id="animations" value="1" checked>
-            <label class="form-check-label" for="animations">Pour faire les animations</label>
+            <input class="form-check-input" style="font-size: 1.5vw;" type="radio" name="categorie_liens" id="animations" value="1" checked>
+            <label class="form-check-label" style="font-size: 1.5vw;" for="animations">Pour faire les animations</label>
         </div>
         <div class="form-check form-group offset-1">
-            <input class="form-check-input" type="radio" name="categorie_liens" id="recherches" value="2"">
-            <label class="form-check-label" for="recherches">Pour faire des recherches</label>
+            <input class="form-check-input" style="font-size: 1.5vw;" type="radio" name="categorie_liens" id="recherches" value="2"">
+            <label class="form-check-label" style="font-size: 1.5vw;" for="recherches">Pour faire des recherches</label>
         </div>
         <div class="form-check form-group offset-1">
-            <input class="form-check-input" type="radio" name="categorie_liens" id="espace-formateur" value="3">
-            <label class="form-check-label" for="espace-formateur">Pour l'espace-formateur</label>
+            <input class="form-check-input" style="font-size: 1.5vw;" type="radio" name="categorie_liens" id="espace-formateur" value="3">
+            <label class="form-check-label" style="font-size: 1.5vw;" for="espace-formateur">Pour l'espace-formateur</label>
         </div>
         <div class="form-group row">
-            <label class="col-md-3" for="nom_site"><strong>Nom du site(*)</strong></label>
-            <input type="text" class="form-control col-md-9" id="nom_site" name="nom_site" placeholder="Entrez le nom du site">
+            <label class="col-md-3" style="font-size: 1.5vw;"for="nom_site"><strong>Nom du site(*)</strong></label>
+            <input type="text" class="form-control col-md-9" style="font-size: 1.5vw;" id="nom_site" name="nom_site" placeholder="Entrez le nom du site">
             <div class="invalid-feedback text-left offset-md-3">Vous devez entrez le nom du site</div>
         </div>
         <div class="form-group row">
-            <label class="col-md-3" for="url"><strong>Adresse du site(*)</strong></label>
-            <input type="url" class="form-control col-md-9" id="url" name="url" placeholder="Entrez l'adresse du site(URL)" required>
+            <label class="col-md-3" style="font-size: 1.5vw;"for="url"><strong>Adresse du site(*)</strong></label>
+            <input type="url" style="font-size: 1.5vw;"class="form-control col-md-9" id="url" name="url" placeholder="Entrez l'adresse du site(URL)" required>
             <div class="invalid-feedback text-left offset-md-3">Vous devez renseigner l'URL du site</div>
         </div>
         <div class="form-group row">
-            <label class="col-md-3" for="description"><strong>Description du site</strong></label>
-            <textarea class="form-control col-md-9" id="description" name="description" placeholder="Entrez une description du site"></textarea>
+            <label class="col-md-3" style="font-size: 1.5vw;"for="description"><strong>Description du site</strong></label>
+            <textarea class="form-control col-md-9" style="font-size: 1.5vw;"id="description" name="description" placeholder="Entrez une description du site"></textarea>
             <div class="invalid-feedback text-left offset-md-3">Vous devez entrer une description</div>
         </div>
         <div class="form-group row">
             <p class="form-text text-center col-md-12">(*) Champs obligatoire</p>
         </div>
-        <button type="submit" class="btn btn-primary btn-block col-md-4 offset-md-4">Envoyer les données</button>
+        <button type="submit" class="btn btn-primary btn-block col-md-4 offset-md-4" style="font-size: 1.5vw;">Envoyer les données</button>
     </form>
+    <footer>
+        <p class="liens" ><a href="?p=presentation">Suivant</a></p><br>
+        <br>
+        <hr>
+        <p class="footer">Copyright &copy; CF2M 2020</p>
+    </footer>
+
     <?php
     include "php/javascript.php"
     ?>

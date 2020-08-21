@@ -10,12 +10,6 @@ mysqli_set_charset($db, "utf8");
     } else {
         $p = $_GET["p"];
         switch ($p) {
-            case "navbar_connect":
-                include "php/navbar_connect.php";
-                break;
-            //case "connectligne":
-                //include "php/connectligne.php";
-                //break;
             case "presentation":
                 include "php/presentation.php";
                 break;
@@ -60,6 +54,15 @@ mysqli_set_charset($db, "utf8");
                 break;
             case "updatetpres":
                 include "php/admin/updatepres.php";
+                break;
+            case "Tutos_admin":
+                include "php/admin/Tutos_admin.php";
+                break;
+            case "projet_admin":
+                include "php/admin/projet_admin.php";
+                break;
+            case "cv_admin":
+                include "php/admin/cv_admin.php";
                 break;
             case "deletepres":
                 include "php/admin/deletepres.php";
