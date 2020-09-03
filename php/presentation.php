@@ -49,7 +49,7 @@
 </div>
 <h2>La cuisine:</h2>
 <div class="descr2">
-    <h3>MMM... Les bon petits plats fait maison.</h3>
+    <h3>MMM... Les bons petits plats fait maison.</h3>
 </div>
 <div class="swiper-container">
     <div class="swiper-wrapper">

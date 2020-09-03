@@ -86,9 +86,9 @@ include "php/admin/navbar_deconnect1.php";
     }
     ?>
     </pre>
-    <p>Vous trouverez ci-dessous quelques liens qui m'ont servit pour confectionner mon site:</p>
+    <p>Vous trouverez ci-dessous quelques liens qui m'ont servi pour confectionner mon site:</p>
     <h2>Pour mes animations:</h2>
-    <div class="liste1"
+    <div class="liste1">
     <ol>
         <?php
 
@@ -107,7 +107,7 @@ include "php/admin/navbar_deconnect1.php";
                     </li>
                     <a href="?p=ajoutliens"<i class="fa fa-plus-circle" aria-hidden="true"></i>Ajouter un lien</a><br>
                     <a href="?p=updateliens&idliens=<?=$item1['idliens']?>"<i class="fa fa-pencil" aria-hidden="true"></i>Modifier un lien</a><br>
-                    <a href="?p=deleteliens&idliens=<?=$item1['idliens']?>"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un liens</a><br>
+                    <a href="?p=deleteliens&idliens=<?=$item1['idliens']?>"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un lien</a><br>
                     <a class="btn btn-danger" href="?p=deleteliens&idliens=<?=$item1['idliens']?>&ok" role="button">Supprimer définitivement !</a>
                     <a class="btn btn-secondary" href="?p=liens_admin" role="button">Ne pas supprimer</a>
                     <?php
@@ -136,7 +136,7 @@ include "php/admin/navbar_deconnect1.php";
             </li>
             <a href="?p=ajoutliens"<i class="fa fa-plus-circle" aria-hidden="true"></i>Ajouter un lien</a><br>
             <a href="?p=updateliens&idliens=<?=$item2['idliens']?>"<i class="fa fa-pencil" aria-hidden="true"></i>Modifier un lien</a><br>
-            <a href="?p=deleteliens&idliens=<?=$item2['idliens']?>"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un liens</a><br>
+            <a href="?p=deleteliens&idliens=<?=$item2['idliens']?>"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un lien</a><br>
             <a class="btn btn-danger" href="?p=deleteliens&idliens=<?=$item2['idliens']?>&ok" role="button">Supprimer définitivement !</a>
             <a class="btn btn-secondary" href="?p=liens_admin" role="button">Ne pas supprimer</a>
             <?php
@@ -165,7 +165,7 @@ include "php/admin/navbar_deconnect1.php";
             </li>
             <a href="?p=ajoutliens"<i class="fa fa-plus-circle" aria-hidden="true"></i>Ajouter un lien</a><br>
             <a href="?p=updateliens&idliens=<?=$item3['idliens']?>"<i class="fa fa-pencil" aria-hidden="true"></i>Modifier un lien</a><br>
-            <a href="?p=deleteliens&idliens=<?=$item3['idliens']?>"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un liens</a><br>
+            <a href="?p=deleteliens&idliens=<?=$item3['idliens']?>"<i class="fa fa-trash" aria-hidden="true"></i>Supprimer un lien</a><br>
             <a class="btn btn-danger" href="?p=deleteliens&idliens=<?=$item3['idliens']?>&ok" role="button">Supprimer définitivement !</a>
             <a class="btn btn-secondary" href="?p=liens_admin" role="button">Ne pas supprimer</a>
             <?php

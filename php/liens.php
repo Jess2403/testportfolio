@@ -37,7 +37,7 @@ include "navbar_connect1.php";
 </div>
 <div class="div1">
     <h1 class="titre1">Mes Liens</h1>
-    <p>Vous trouverez ci-dessous quelques liens qui m'ont servit pour confectionner mon site:</p>
+    <p>Vous trouverez ci-dessous quelques liens qui m'ont servi pour confectionner mon site:</p>
     <h2>Pour mes animations:</h2>
     <div>
         <ol class="liste1">
